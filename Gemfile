@@ -4,7 +4,7 @@ gem 'rails', '>= 5.0.0.rc1', '< 5.1'
 gem 'pg'                              # Postgres ORM
 gem 'puma'                            # Application server
 gem 'redis'                           # Redis adapter
-gem 'sorcery'                         # Magical authentication for Rails 3 & 4
+gem 'clearance'                       # Rails authentication with email & password
 gem 'MSP'                             # Less typing in Service Providers
 
 gem 'uglifier'                        # compressor for JavaScript assets

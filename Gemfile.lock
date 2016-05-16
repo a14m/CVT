@@ -49,6 +49,10 @@ GEM
     brakeman (3.3.0)
     builder (3.2.2)
     byebug (9.0.3)
+    clearance (1.14.1)
+      bcrypt
+      email_validator (~> 1.4)
+      rails (>= 3.1)
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -60,13 +64,13 @@ GEM
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
+    email_validator (1.6.0)
+      activemodel
     erubis (2.7.0)
     execjs (2.6.0)
     fabrication (2.15.2)
     faker (1.6.3)
       i18n (~> 0.5)
-    faraday (0.9.2)
-      multipart-post (>= 1.2, < 3)
     ffi (1.9.10)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -76,7 +80,6 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
-    jwt (1.5.1)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.4.1)
@@ -95,19 +98,9 @@ GEM
     mime-types-data (3.2016.0221)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
-    multi_json (1.12.0)
-    multi_xml (0.5.5)
-    multipart-post (2.0.0)
     nio4r (1.2.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
-    oauth (0.5.1)
-    oauth2 (1.1.0)
-      faraday (>= 0.8, < 0.10)
-      jwt (~> 1.0, < 1.5.2)
-      multi_json (~> 1.3)
-      multi_xml (~> 0.5)
-      rack (>= 1.2, < 3)
     parser (2.3.1.0)
       ast (~> 2.2)
     pg (0.18.4)
@@ -195,10 +188,6 @@ GEM
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
     slop (3.6.0)
-    sorcery (0.9.1)
-      bcrypt (~> 3.1)
-      oauth (~> 0.4, >= 0.4.4)
-      oauth2 (>= 0.8.0)
     sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -231,6 +220,7 @@ DEPENDENCIES
   MSP
   annotate
   brakeman
+  clearance
   coffee-rails
   fabrication
   faker
@@ -247,7 +237,6 @@ DEPENDENCIES
   rubocop
   sass-rails
   shoulda-matchers
-  sorcery
   turbolinks
   uglifier
   web-console
