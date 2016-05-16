@@ -16,7 +16,7 @@
           - if signed_in?
             = button_to t(".sign_out"), sign_out_path, method: :delete, class: 'btn btn-danger-outline'
           - else
-            = link_to t(".sign_in"), sign_in_path, class: 'btn btn-success-outline'
+            = link_to t('authentications.sign_in'), sign_in_path, class: 'btn btn-success-outline'
       #flash
         - flash.each do |key, value|
           %div{:class => "flash #{key}"}= value
