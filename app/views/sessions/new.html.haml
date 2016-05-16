@@ -1,10 +1,10 @@
-%form.center-block.form-authentication
+= form_for :session, url: session_path, html: {class: 'center-block form-authentication' } do |form|
   %h2= t('authentications.sign_in')
-  %input.form-control{type: :email,    placeholder: t('authentications.email')}
-  %input.form-control{type: :password, placeholder: t('authentications.password')}
-  %input#remember_me{type: :checkbox}
-  %label{for: :remember_me}= t('authentications.remember_me')
-  %button.btn.btn-primary-outline{type: :submit}= t('authentications.sign_in')
+  = form.email_field :email,       placeholder: t('authentications.email'),    class: 'form-control'
+  = form.password_field :password, placeholder: t('authentications.password'), class: 'form-control'
+  = form.check_box :remember_me
+  = form.label :remember_me, t('authentications.remember_me')
+  = form.submit t('authentications.sign_in'), class: 'btn btn-primary-outline'
 
   = link_to t('authentications.sign_up'), sign_up_path
   = link_to t('authentications.forgot_password'), new_password_path
