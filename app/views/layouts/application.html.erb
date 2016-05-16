@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Katrina</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -10,13 +12,16 @@
   </head>
 
   <body>
-    <div id="header">
-      <% if signed_in? -%>
-      <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
-      <% else -%>
-      <%= link_to t(".sign_in"), sign_in_path %>
-      <% end -%>
-    </div>
+    <div class="container">
+      <nav class="navbar">
+        <div class="pull-xs-right">
+          <% if signed_in? -%>
+            <%= button_to t(".sign_out"), sign_out_path, method: :delete, class: 'btn btn-danger-outline' %>
+          <% else -%>
+            <%= link_to t(".sign_in"), sign_in_path, class: 'btn btn-success-outline' %>
+          <% end -%>
+        </div>
+      </nav>
 
     <div id="flash">
       <% flash.each do |key, value| %>
@@ -24,5 +29,6 @@
       <% end %>
     </div>
     <%= yield %>
+    </div>
   </body>
 </html>

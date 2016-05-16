@@ -1,0 +1,28 @@
+.form-authentication {
+  max-width: 330px;
+  padding: 15px;
+
+  input, label, a, button {
+    margin-bottom: 10px;
+  }
+
+  button[type=submit] {
+    display: block;
+    width: 100%;
+  }
+
+  .validated-input {
+    width: 200%;
+
+    input {
+      display: inline-block;
+      width: 50%;
+    }
+
+    .danger {
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+}
+

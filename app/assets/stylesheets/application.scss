@@ -1,0 +1,12 @@
+@import 'bootstrap';
+
+/* application specific styles */
+@import './authentications.scss';
+
+input, button, div, small, a {
+  transition: all 0.2s ease;
+}
+
+.danger {
+  color: $brand-danger;
+}
