@@ -7,6 +7,7 @@ gem 'redis'                           # Redis adapter
 gem 'clearance'                       # Rails authentication with email & password
 gem 'MSP'                             # Less typing in Service Providers
 
+gem 'rails-assets-tether'             # Bootstrap tooltip dependency
 gem 'bootstrap', '~> 4.0.0.alpha3'    # Bootstrap 4
 gem 'uglifier'                        # compressor for JavaScript assets
 gem 'haml-rails'                      # Haml as the templating engine
@@ -16,7 +17,7 @@ gem 'sass-rails'                      # SCSS for stylesheets
 gem 'turbolinks'                      # navigating your faster
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 group :development, :test do
   # gem 'bullet'                        # kill N+1 queries and unused eager loading
