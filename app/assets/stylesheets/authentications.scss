@@ -2,13 +2,17 @@
   max-width: 330px;
   padding: 15px;
 
-  input, label, a, button {
+  input, label, button {
     margin-bottom: 10px;
   }
 
   button[type=submit] {
     display: block;
     width: 100%;
+  }
+
+  a {
+    display: block;
   }
 
   .validated-input {
