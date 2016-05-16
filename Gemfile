@@ -9,6 +9,7 @@ gem 'MSP'                             # Less typing in Service Providers
 
 gem 'bootstrap', '~> 4.0.0.alpha3'    # Bootstrap 4
 gem 'uglifier'                        # compressor for JavaScript assets
+gem 'haml-rails'                      # Haml as the templating engine
 gem 'coffee-rails'                    # .coffee assets and views
 gem 'jquery-rails'                    # jquery as the JavaScript library
 gem 'sass-rails'                      # SCSS for stylesheets

@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %title Katrina
+    = csrf_meta_tags
+    = action_cable_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+  %body
+    .container
+      %nav.navbar
+        .pull-xs-right
+          - if signed_in?
+            = button_to t(".sign_out"), sign_out_path, method: :delete, class: 'btn btn-danger-outline'
+          - else
+            = link_to t(".sign_in"), sign_in_path, class: 'btn btn-success-outline'
+      #flash
+        - flash.each do |key, value|
+          %div{:class => "flash #{key}"}= value
+      = yield
