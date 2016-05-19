@@ -7,6 +7,7 @@ gem 'redis'                           # Redis adapter
 gem 'clearance'                       # Rails authentication with email & password
 gem 'MSP'                             # Less typing in Service Providers
 
+# front-end dependencies
 gem 'rails-assets-tether'             # Bootstrap tooltip dependency
 gem 'bootstrap', '~> 4.0.0.alpha3'    # Bootstrap 4
 gem 'uglifier'                        # compressor for JavaScript assets
@@ -14,7 +15,8 @@ gem 'haml-rails'                      # Haml as the templating engine
 gem 'coffee-rails'                    # .coffee assets and views
 gem 'jquery-rails'                    # jquery as the JavaScript library
 gem 'sass-rails'                      # SCSS for stylesheets
-gem 'turbolinks'                      # navigating your faster
+gem 'turbolinks', '~> 5.0.0.beta'     # navigating your faster
+gem 'parsley-rails'                   # awesome form validation
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby

@@ -122,6 +122,8 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     parser (2.3.1.0)
       ast (~> 2.2)
+    parsley-rails (2.0.7.0)
+      railties (>= 3.0.0)
     pg (0.18.4)
     powerpack (0.1.1)
     pry (0.10.3)
@@ -225,8 +227,9 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.4)
-    turbolinks (2.5.3)
-      coffee-rails
+    turbolinks (5.0.0.beta2)
+      turbolinks-source
+    turbolinks-source (5.0.0.beta4)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
@@ -256,6 +259,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   listen
+  parsley-rails
   pg
   pry-byebug
   puma
@@ -268,9 +272,9 @@ DEPENDENCIES
   sass-rails
   shoulda-matchers
   therubyracer
-  turbolinks
+  turbolinks (~> 5.0.0.beta)
   uglifier
   web-console
 
 BUNDLED WITH
-   1.12.3
+   1.12.4
