@@ -1,6 +1,6 @@
 Clearance.configure do |config|
   config.allow_sign_up = true
-  config.cookie_domain = '.katrina.dev'
+  config.cookie_domain = ".#{ENV.fetch('DOMAIN', 'katrina.dev')}"
   config.cookie_expiration = ->(_cookies) { 1.year.from_now.utc }
   config.cookie_name = 'remember_token'
   config.cookie_path = '/'

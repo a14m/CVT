@@ -25,6 +25,7 @@ en:
     sign_up: 'Sign Up'
     sign_out: 'Sign Out'
     forgot_password: 'Forgot your password ?'
+    reset_password: 'Reset Password'
     email: 'Please enter your email'
     password: 'Please enter your password'
     remember_me: 'Remember Me'
