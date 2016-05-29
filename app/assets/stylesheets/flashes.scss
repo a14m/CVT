@@ -1,0 +1,28 @@
+#flash {
+  height: 56px;
+  border-width: 1px;
+  border-radius: 0.25rem;
+
+  .flash-messages-success {
+    border: 1px solid $brand-success;
+    border-radius: 0.25rem;
+    color: $brand-success;
+    height: 100%;
+  }
+
+  .flash-messages-notice {
+    border: 1px solid $brand-warning;
+    border-radius: 0.25rem;
+    color: $brand-warning;
+    height: 100%;
+
+  }
+
+  .flash-messages-error {
+    border: 1px solid $brand-danger;
+    border-radius: 0.25rem;
+    color: $brand-danger;
+    height: 100%;
+  }
+}
+
