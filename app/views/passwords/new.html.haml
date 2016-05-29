@@ -1,7 +1,7 @@
 = form_for :password, url: passwords_path,
   html: { class: 'center-block form-authentication' } do |f|
 
-  %h2= t('authentications.reset_passowrd')
+  %h2= t('authentications.reset_password')
 
   .validated-input#email
     = f.email_field :email, placeholder: t('authentications.email'),
