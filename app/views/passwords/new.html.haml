@@ -1,9 +1,13 @@
-#clearance.password-reset
-  %h2= t(".title")
-  %p= t(".description")
-  = form_for :password, url: passwords_path do |form|
-    .text-field
-      = form.label :email
-      = form.text_field :email, type: 'email'
-    .submit-field
-      = form.submit
+= form_for :password, url: passwords_path,
+  html: { class: 'center-block form-authentication' } do |f|
+
+  %h2= t('authentications.reset_passowrd')
+
+  .validated-input#email
+    = f.email_field :email, placeholder: t('authentications.email'),
+      'data-parsley-class-handler' => '#email',
+      class: 'form-control', required: true
+
+  = f.submit t('authentications.reset_password'), class: 'btn btn-primary-outline'
+
+  = link_to t('authentications.sign_in'), sign_in_path
