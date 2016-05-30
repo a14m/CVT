@@ -235,6 +235,8 @@ GEM
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.0.5)
+    validates_email_format_of (1.6.3)
+      i18n
     web-console (3.1.1)
       activemodel (>= 4.2)
       debug_inspector
@@ -274,6 +276,7 @@ DEPENDENCIES
   therubyracer
   turbolinks (~> 5.0.0.beta)
   uglifier
+  validates_email_format_of
   web-console
 
 BUNDLED WITH

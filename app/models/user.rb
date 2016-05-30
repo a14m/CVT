@@ -18,4 +18,11 @@
 
 class User < ApplicationRecord
   include Clearance::User
+
+  # Validations
+  validates :email,    presence: true
+  validates :email,    uniqueness: { case_sensitive: false }, email_format: true
+
+  validates :password, presence: true
+  validates :password, length: { minimum: 8 }
 end
