@@ -5,6 +5,7 @@ gem 'pg'                              # Postgres ORM
 gem 'puma'                            # Application server
 gem 'redis'                           # Redis adapter
 gem 'clearance'                       # Rails authentication with email & password
+gem 'sorcery'                         # Magical authentication for Rails 3 & 4
 gem 'validates_email_format_of'       # Validate e-mail addreses
 gem 'MSP'                             # Less typing in Service Providers
 
