@@ -161,7 +161,7 @@ Rails.application.config.sorcery.configure do |config|
   # config.salesforce.user_info_mapping = {:email => "email"}
 
   # --- user config ---
-  config.user_config do |_user|
+  config.user_config do |user|
     # -- core --
     # specify username attributes, for example: [:username, :email].
     # Default: `[:email]`
@@ -309,7 +309,7 @@ Rails.application.config.sorcery.configure do |config|
     # mailer class. Needed.
     # Default: `nil`
     #
-    # user.reset_password_mailer =
+    user.reset_password_mailer = AuthenticationMailer
 
     # reset password email method on your mailer class.
     # Default: `:reset_password_email`
