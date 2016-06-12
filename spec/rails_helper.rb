@@ -53,8 +53,8 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
-  config.include RequestHelpers, type: :request
-  config.include ViewHelpers, type: :view
+  # config.include RequestHelpers, type: :request
+  # config.include ViewHelpers, type: :view
 
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
