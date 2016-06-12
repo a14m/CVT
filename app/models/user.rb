@@ -28,6 +28,10 @@ class User < ApplicationRecord
   validates :email,    presence: true
   validates :email,    uniqueness: { case_sensitive: false }, email_format: true
 
-  validates :password, presence: true
-  validates :password, length: { minimum: 8 }
+  validates :password, presence: true, if: :password_required?
+  validates :password, length: { minimum: 8 }, if: :password_required?
+
+  def password_required?
+    new_record? || changes[:crypted_password]
+  end
 end
