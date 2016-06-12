@@ -29,7 +29,7 @@ end
 
 group :development do
   gem 'letter_opener'                 # Preview email in the browser
-  gem 'rspec-rails'                   # Install Rspec core
+  gem 'rspec-rails', '~> 3.5.0.beta4' # Install Rspec core
   gem 'brakeman', require: false      # Analysis security vulnerability scanner
   gem 'rubocop'                       # Styling ruby cop
   gem 'annotate'                      # Annotate Rails classes
