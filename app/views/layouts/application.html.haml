@@ -13,8 +13,8 @@
     .container
       %nav.navbar
         .pull-xs-right
-          - if signed_in?
-            = button_to t(".sign_out"), sign_out_path, method: :delete, class: 'btn btn-danger-outline'
+          - if logged_in?
+            = button_to t('authentications.sign_out'), sign_out_path, method: :delete, class: 'btn btn-danger-outline'
           - else
             = link_to t('authentications.sign_in'), sign_in_path, class: 'btn btn-success-outline'
       = render partial: 'layouts/flashes', locals: { flash: flash }
