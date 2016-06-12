@@ -31,3 +31,5 @@ en:
     password: 'Please enter your password'
     new_password: 'Please enter new password'
     remember_me: 'Remember Me'
+    login_required: 'Please login first'
+    invalid_credentials: 'Invalid Email or Password'
