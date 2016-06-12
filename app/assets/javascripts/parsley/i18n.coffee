@@ -9,7 +9,7 @@ window.ParsleyConfig.i18n.en = $.extend(window.ParsleyConfig.i18n.en || {}, {
     alphanum:     "Should be alphanumeric."
   },
   notblank:       "Should not be blank.",
-  required:       "Is required.",
+  required:       "Required.",
   pattern:        "Seems to be invalid.",
   min:            "Should be greater than or equal to %s.",
   max:            "Should be lower than or equal to %s.",
