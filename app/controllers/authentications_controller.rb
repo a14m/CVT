@@ -1,6 +1,7 @@
 # Authentications Sign In/Up/Out
 class AuthenticationsController < ApplicationController
   skip_before_action :require_login, except: [:destroy]
+  before_action :require_guest, only: [:new_sign_in, :new_sign_up]
 
   # POST /sign_up
   def sign_up
@@ -10,7 +11,7 @@ class AuthenticationsController < ApplicationController
     )
 
     if @user.save
-      redirect_back_or_to(:dashboard, success: 'Welcome')
+      redirect_back_or_to(:dashboard)
     else
       flash.now[:error] = @user.errors.full_messages.to_sentence
       render 'new_sign_up'
@@ -26,7 +27,7 @@ class AuthenticationsController < ApplicationController
     )
 
     if @user
-      redirect_back_or_to(:dashboard, success: 'Welcome Back')
+      redirect_back_or_to(:dashboard)
     else
       flash.now[:error] = I18n.t('authentications.invalid_credentials')
       render 'new_sign_in'
