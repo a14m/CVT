@@ -135,6 +135,8 @@ GEM
     pry-byebug (3.4.0)
       byebug (~> 9.0)
       pry (~> 0.10)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     puma (3.4.0)
     rack (2.0.0.rc1)
       json
@@ -266,6 +268,7 @@ DEPENDENCIES
   parsley-rails
   pg
   pry-byebug
+  pry-rails
   puma
   rails (>= 5.0.0.rc1, < 5.1)
   rails-assets-tether
