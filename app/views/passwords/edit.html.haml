@@ -2,11 +2,11 @@
   url: user_password_path(@user, token: @user.confirmation_token),
   html: { method: :put, class: 'center-block form-authentication' } do |f|
 
-  %h2= t('authentications.update_password')
+  %h2= I18n.t('authentications.update_password')
 
   .validated-input#password
     = f.password_field :password, placeholder: t('authentications.new_password'),
       'data-parsley-class-handler' => '#password',
       class: 'form-control', required: true, minlength: 8
 
-  = f.submit t('authentications.update_password'), class: 'btn btn-primary-outline'
+  = f.submit I18n.t('authentications.update_password'), class: 'btn btn-primary-outline'
