@@ -309,7 +309,7 @@ Rails.application.config.sorcery.configure do |config|
     # mailer class. Needed.
     # Default: `nil`
     #
-    user.reset_password_mailer = AuthenticationMailer
+    user.reset_password_mailer = PasswordsMailer
 
     # reset password email method on your mailer class.
     # Default: `:reset_password_email`
@@ -331,7 +331,7 @@ Rails.application.config.sorcery.configure do |config|
     # hammering protection, how long in seconds to wait before allowing another email to be sent.
     # Default: `5 * 60`
     #
-    # user.reset_password_time_between_emails =
+    user.reset_password_time_between_emails = 5 * 60
 
     # -- brute_force_protection --
     # Failed logins attribute name.

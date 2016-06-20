@@ -33,3 +33,8 @@ en:
     remember_me: 'Remember Me'
     login_required: 'Please login first'
     invalid_credentials: 'Invalid Email or Password'
+  passwords:
+    reset_instructions_sent: 'Please check your email for password reset instructions'
+  passwords_mailer:
+    reset_password_email:
+      subject: 'Reset Password Instructions'
