@@ -1,17 +1,17 @@
 = form_for :authentication, url: sign_up_path,
   html: { class: 'center-block form-authentication' } do |f|
 
-  %h2= t('authentications.sign_up')
+  %h2= I18n.t('authentications.sign_up')
   .validated-input#email
-    = f.email_field :email, placeholder: t('authentications.email'),
+    = f.email_field :email, placeholder: I18n.t('authentications.email'),
       'data-parsley-class-handler' => '#email',
       class: 'form-control', required: true
 
   .validated-input#password
-    = f.password_field :password, placeholder: t('authentications.password'),
+    = f.password_field :password, placeholder: I18n.t('authentications.password'),
       'data-parsley-class-handler' => '#password',
       class: 'form-control', required: true, minlength: 8
 
-  = f.submit t('authentications.sign_up'), class: 'btn btn-primary-outline'
+  = f.submit I18n.t('authentications.sign_up'), class: 'btn btn-primary-outline'
 
-  = link_to t('authentications.sign_in'), sign_in_path
+  = link_to I18n.t('authentications.sign_in'), sign_in_path
