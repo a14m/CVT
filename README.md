@@ -1,18 +1,7 @@
-# R5 (Rails 5)
+# Katrina
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](/LICENSE.md)
 
-Basic Rails 5 Template to start building up on.
-
-It installs all the dependencies locally in `.bundle/gems`  
-Just replace the `r5` or `R5` with the name of your application in the following
-files and you are good to go.
-
-files:
-- `app/views/layouts/application.html.erb`
-- `config/application.rb`
-- `config/database.yml`
-- `config/environments/production.rb`
-- `config/initializers/session_store.rb`
+Torrent remote downloader.
 
 ## Development
 ### Requirements
@@ -20,9 +9,8 @@ files:
 
 - Install `rbenv` (ex.`brew install rbenv`)
 - Install `ruby-build` (ex.`brew install ruby-build`)
-- Install [rbenv-vars](https://github.com/sstephenson/rbenv-vars) plugin
-- (Optional) Install
-[rbenv-gem-rehash](https://github.com/sstephenson/rbenv-gem-rehash) plugin
+- (Optional) Install [rbenv-vars](https://github.com/sstephenson/rbenv-vars) plugin
+- (Optional) Install [rbenv-gem-rehash](https://github.com/sstephenson/rbenv-gem-rehash) plugin
 
 #### Ruby version
 - Install the desired ruby version using `rbenv install $(cat .ruby-version)`
@@ -40,7 +28,7 @@ files:
 ```
 bundle install
 ```
-- Add `.rbenv-vars` file similar to the provided `.rbenv-vars.example`
+- Add `.env` file similar to the provided `.env.example`
 - Run `bundle exec rake db:setup`
 - Run the server
 ```sh
