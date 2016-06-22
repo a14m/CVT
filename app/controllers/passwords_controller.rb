@@ -12,6 +12,12 @@ class PasswordsController < ApplicationController
       success: I18n.t('passwords.reset_instructions_sent'))
   end
 
+  # GET /:token/reset_password
+  def new_reset_password
+    @user = User.load_from_reset_password_token(params[:token])
+    not_authenticated unless @user
+  end
+
   # POST /:token/reset_password
   def reset_password
   end
