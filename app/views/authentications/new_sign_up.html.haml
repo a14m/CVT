@@ -10,7 +10,13 @@
   .validated-input#password
     = f.password_field :password, placeholder: I18n.t('authentications.password'),
       'data-parsley-class-handler' => '#password',
-      class: 'form-control', required: true, minlength: 8
+      class: 'form-control', required: true, minlength: 8,
+      id: 'sign_up_password'
+
+  .validated-input#confirm_password
+    = f.password_field :confirm_password, placeholder: I18n.t('authentications.confirm_password'),
+      'data-parsley-class-handler' => '#confirm_password',
+      class: 'form-control', required: true, 'data-parsley-equalto'=> '#sign_up_password'
 
   = f.submit I18n.t('authentications.sign_up'), class: 'btn btn-primary-outline'
 

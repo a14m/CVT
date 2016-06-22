@@ -10,7 +10,8 @@ class AuthenticationsController < ApplicationController
       password: sign_up_params[:password]
     )
 
-    if @user.save
+    if @user.valid?
+      auto_login(@user)
       redirect_back_or_to(:dashboard)
     else
       flash.now[:error] = @user.errors.full_messages.to_sentence
@@ -44,7 +45,7 @@ class AuthenticationsController < ApplicationController
 
   def sign_up_params
     params.require(:authentication)
-          .permit(:email, :password, :terms_and_conditions)
+          .permit(:email, :password, :confirm_password, :terms_and_conditions)
   end
 
   def sign_in_params
