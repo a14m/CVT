@@ -34,8 +34,11 @@ en:
     remember_me: 'Remember Me'
     login_required: 'Please login first'
     invalid_credentials: 'Invalid Email or Password'
+    sign_up_success: 'Welcome'
   passwords:
     reset_instructions_sent: 'Please check your email for password reset instructions'
+    reset_success: 'Password successfully changed'
+    reset_failed: 'Could not reset password'
   passwords_mailer:
     reset_password_email:
       subject: 'Reset Password Instructions'
