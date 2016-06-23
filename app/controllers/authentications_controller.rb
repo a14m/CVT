@@ -5,18 +5,18 @@ class AuthenticationsController < ApplicationController
 
   # POST /sign_up
   def sign_up
-    @user = User.create(
+    @user = User.create!(
       email: sign_up_params[:email],
       password: sign_up_params[:password]
     )
-
-    if @user.valid?
-      auto_login(@user)
-      redirect_back_or_to(:dashboard)
-    else
-      flash.now[:error] = @user.errors.full_messages.to_sentence
-      render 'new_sign_up'
-    end
+    auto_login(@user)
+    redirect_back_or_to(
+      :dashboard,
+      success: I18n.t('authentications.sign_up_success')
+    )
+  rescue ActiveRecord::RecordInvalid => e
+    flash.now[:error] = e.record.errors.full_messages.to_sentence
+    render 'new_sign_up'
   end
 
   # POST /sign_in
