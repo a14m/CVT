@@ -1,4 +1,4 @@
-# Katrina
+# Torminator
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](/LICENSE.md)
 
 Torrent remote downloader.
