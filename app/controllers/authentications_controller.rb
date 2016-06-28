@@ -10,10 +10,8 @@ class AuthenticationsController < ApplicationController
       password: sign_up_params[:password]
     )
     auto_login(@user)
-    redirect_back_or_to(
-      :dashboard,
-      success: I18n.t('authentications.sign_up_success')
-    )
+    flash[:success] = I18n.t('authentications.sign_up_success')
+    redirect_to :dashboard
   rescue ActiveRecord::RecordInvalid => e
     flash.now[:error] = e.record.errors.full_messages.to_sentence
     render 'new_sign_up'
