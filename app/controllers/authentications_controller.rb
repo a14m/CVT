@@ -43,7 +43,7 @@ class AuthenticationsController < ApplicationController
 
   def sign_up_params
     params.require(:authentication)
-          .permit(:email, :password, :confirm_password, :terms_and_conditions)
+          .permit(:email, :password, :confirm_password)
   end
 
   def sign_in_params
