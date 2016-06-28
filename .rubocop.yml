@@ -16,9 +16,16 @@ Metrics/LineLength:
     - 'spec/rails_helper.rb'
     - 'spec/spec_helper.rb'
 
+Metrics/MethodLength:
+  Max: 15
+
+Metrics/AbcSize:
+  Max: 20
+
 Style/Documentation:
   Exclude:
     - 'db/**/*'
+    - 'app/models/**/*'
 
 Style/ExtraSpacing:
   Exclude:

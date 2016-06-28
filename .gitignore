@@ -18,3 +18,4 @@
 # DOTFILES
 *.swp
 .rbenv-vars
+.env

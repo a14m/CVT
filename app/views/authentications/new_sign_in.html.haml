@@ -1,0 +1,22 @@
+= form_for :authentication, url: sign_in_path,
+  html: { class: 'center-block form-authentication' } do |f|
+
+  %h2= I18n.t('authentications.sign_in')
+
+  .validated-input#email
+    = f.email_field :email, placeholder: I18n.t('authentications.email'),
+      'data-parsley-class-handler' => '#email',
+      class: 'form-control', required: true
+
+  .validated-input#password
+    = f.password_field :password, placeholder: I18n.t('authentications.password'),
+      'data-parsley-class-handler' => '#password',
+      class: 'form-control', required: true, minlength: 8
+
+  = f.check_box :remember_me
+  = f.label :remember_me, I18n.t('authentications.remember_me')
+
+  = f.submit I18n.t('authentications.sign_in'), class: 'btn btn-primary-outline'
+
+  = link_to I18n.t('authentications.sign_up'), sign_up_path
+  = link_to I18n.t('authentications.forgot_password'), reset_password_instructions_path

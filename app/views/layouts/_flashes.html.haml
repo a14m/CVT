@@ -1,0 +1,7 @@
+#flash
+  - unless flash.empty?
+    %div{class: "alert flash-messages-#{flash.first[0]} alert-dismissible fade in", role: "alert"}
+      %button{class: "close", "data-dismiss": "alert"}
+        %span &times;
+      - flash.each do |key, value|
+        %div{class: "flash_#{key}"}= html_escape(value)

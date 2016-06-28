@@ -20,4 +20,29 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  authentications:
+    sign_in: 'Sign In'
+    sign_up: 'Sign Up'
+    sign_out: 'Sign Out'
+    forgot_password: 'Forgot your password ?'
+    reset_password: 'Reset Password'
+    update_password: 'Update Password'
+    email: 'Please enter your email'
+    password: 'Please enter your password'
+    new_password: 'Please enter new password'
+    confirm_password: 'Please confirm your password'
+    remember_me: 'Remember Me'
+    login_required: 'Please login first'
+    invalid_credentials: 'Invalid Email or Password'
+    sign_up_success: 'Welcome'
+    accept_terms_and_conditions: 'By signing up you agree to our %{tos}, please check our %{privacy} and %{refund} policies'
+    terms_of_service: 'Terms of Service'
+    privacy: 'Privacy'
+    refund: 'Refund'
+  passwords:
+    reset_instructions_sent: 'Please check your email for password reset instructions'
+    reset_success: 'Password successfully changed'
+    reset_failed: 'Could not reset password'
+  passwords_mailer:
+    reset_password_email:
+      subject: 'Reset Password Instructions'

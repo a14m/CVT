@@ -1,0 +1,14 @@
+@import 'bootstrap';
+/* @import 'parsley'; */
+
+/* application specific styles */
+@import './authentications.scss';
+@import './flashes.scss';
+
+input, button, div, small, a {
+  transition: all 0.2s ease;
+}
+
+.danger {
+  color: $brand-danger;
+}

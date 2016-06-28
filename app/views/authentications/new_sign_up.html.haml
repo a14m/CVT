@@ -1,0 +1,29 @@
+= form_for :authentication, url: sign_up_path,
+  html: { class: 'center-block form-authentication' } do |f|
+
+  %h2= I18n.t('authentications.sign_up')
+  .validated-input#email
+    = f.email_field :email, placeholder: I18n.t('authentications.email'),
+      'data-parsley-class-handler' => '#email',
+      class: 'form-control', required: true
+
+  .validated-input#password
+    = f.password_field :password, placeholder: I18n.t('authentications.password'),
+      'data-parsley-class-handler' => '#password',
+      class: 'form-control', required: true, minlength: 8,
+      id: 'sign_up_password'
+
+  .validated-input#confirm_password
+    = f.password_field :confirm_password, placeholder: I18n.t('authentications.confirm_password'),
+      'data-parsley-class-handler' => '#confirm_password',
+      class: 'form-control', required: true, 'data-parsley-equalto'=> '#sign_up_password'
+
+
+  = f.submit I18n.t('authentications.sign_up'), class: 'btn btn-primary-outline'
+  = link_to I18n.t('authentications.sign_in'), sign_in_path
+
+.legal.center-block
+  %small= I18n.t('authentications.accept_terms_and_conditions',
+    tos: link_to(I18n.t('authentications.terms_of_service'), root_path),
+    privacy: link_to(I18n.t('authentications.privacy'), root_path),
+    refund: link_to(I18n.t('authentications.refund'), root_path)).html_safe
