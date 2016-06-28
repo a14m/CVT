@@ -1,9 +1,8 @@
 document.addEventListener('turbolinks:load', ->
-  # clean old dangling errors due to turbolinks
-  $('small.danger.filled').remove()
-
   # setup parsley for the form
-  $('.form-authentication').parsley(
+  authentication_form = $('.form-authentication')
+  return unless authentication_form.length > 0
+  authentication_form.parsley(
     trigger: 'input'
     errorClass: 'has-danger'
     successClass: 'has-success'
