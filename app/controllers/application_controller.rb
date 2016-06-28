@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   # before action used to insure guest only routes
   def require_guest
-    redirect_back_or_to(:dashboard) if current_user
+    redirect_to(:dashboard) if current_user
   end
 
   private
