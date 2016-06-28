@@ -18,6 +18,10 @@
       'data-parsley-class-handler' => '#confirm_password',
       class: 'form-control', required: true, 'data-parsley-equalto'=> '#sign_up_password'
 
-  = f.submit I18n.t('authentications.sign_up'), class: 'btn btn-primary-outline'
 
+  = f.submit I18n.t('authentications.sign_up'), class: 'btn btn-primary-outline'
   = link_to I18n.t('authentications.sign_in'), sign_in_path
+
+  .legal
+    %small= I18n.t('authentications.accept_terms_and_conditions',
+      tos: link_to(I18n.t('authentications.terms_of_service'), root_path)).html_safe
