@@ -35,6 +35,8 @@ en:
     login_required: 'Please login first'
     invalid_credentials: 'Invalid Email or Password'
     sign_up_success: 'Welcome'
+    accept_terms_and_conditions: 'By signing up you agree to our %{tos}'
+    terms_of_service: 'Terms of Service'
   passwords:
     reset_instructions_sent: 'Please check your email for password reset instructions'
     reset_success: 'Password successfully changed'
