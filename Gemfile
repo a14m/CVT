@@ -38,6 +38,7 @@ group :development do
   gem 'annotate'                      # Annotate Rails classes
   gem 'web-console'                   # using <%= console %> in views
   gem 'listen'                        # speeds up development
+  gem 'rubycritic', require: false    # A Ruby code quality reporter
   # gem 'spring'
   # gem 'spring-watcher-listen'
 end
