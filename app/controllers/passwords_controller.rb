@@ -24,9 +24,9 @@ class PasswordsController < ApplicationController
     fail NotFoundError unless @user
     @user.change_password!(params[:password_reset][:password])
     flash[:success] = I18n.t('passwords.reset_success')
-    redirect_to root_path
   rescue ActiveRecord::RecordInvalid, NotFoundError
     flash[:error] = I18n.t('passwords.reset_failed')
+  ensure
     redirect_to root_path
   end
 end
