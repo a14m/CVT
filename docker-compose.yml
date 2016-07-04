@@ -1,0 +1,19 @@
+version: '2'
+services:
+  db:
+    image: postgres:9.5.3
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    command: bin/rails server --port 3000 --binding 0.0.0.0
+    environment:
+      - DEV_DATABASE_URL=postgres://postgres@db:5432/development
+      - TEST_DATABASE_URL=postgres://postgres@db:5432/test
+    ports:
+      - "3000:3000"
+    links:
+      - db
+    volumes:
+      - .:/app
