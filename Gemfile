@@ -19,9 +19,7 @@ gem 'jquery-rails'                    # jquery as the JavaScript library
 gem 'sass-rails'                      # SCSS for stylesheets
 gem 'turbolinks', '~> 5.0.0.beta'     # navigating your faster
 gem 'parsley-rails'                   # awesome form validation
-
-# See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+gem 'tzinfo-data'                     # Timezone Data
 
 group :development, :test do
   # gem 'bullet'                        # kill N+1 queries and unused eager loading

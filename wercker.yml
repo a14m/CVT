@@ -3,7 +3,7 @@
 # https://registry.hub.docker.com/_/ruby/
 # If you want to use a specific version you would use a tag:
 # ruby:2.2.2
-box: ruby
+box: ruby:2.3.1
 # You can also use services such as databases. Read more on our dev center:
 # http://devcenter.wercker.com/docs/services/index.html
 services:
@@ -21,11 +21,14 @@ build:
   # Read more about steps on our dev center:
   # http://devcenter.wercker.com/docs/steps/index.html
   steps:
+    - script:
+      name: Install NodeJS runtime
+      code: apt-get update -y && apt-get install nodejs -y
     - bundle-install
     - rails-database-yml
     - script:
-      name: load db
+      name: Load DB
       code: RAILS_ENV=test bundle exec rake db:schema:load
     - script:
-      name: rspec
+      name: RSpec
       code: bundle exec rspec
