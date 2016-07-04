@@ -20,6 +20,7 @@ gem 'sass-rails'                      # SCSS for stylesheets
 gem 'turbolinks', '~> 5.0.0.beta'     # navigating your faster
 gem 'parsley-rails'                   # awesome form validation
 gem 'tzinfo-data'                     # Timezone Data
+gem 'transmission-rpc'                # Transmission torrent client
 
 group :development, :test do
   # gem 'bullet'                        # kill N+1 queries and unused eager loading
