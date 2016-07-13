@@ -23,7 +23,12 @@ default: &default
 
 development:
   <<: *default
-  url: <%= ENV['DEV_DATABASE_URL'] %>
+  database: torminator_development
+  username: postgres
+  password:
+  host: <%= ENV['DB_PORT_5432_TCP_ADDR'] %>
+  port: <%= ENV['DB_PORT_5432_TCP_PORT'] %>
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +62,11 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  url: <%= ENV['TEST_DATABASE_URL'] %>
+  database: torminator_test
+  username: postgres
+  password:
+  host: <%= ENV['DB_PORT_5432_TCP_ADDR'] %>
+  port: <%= ENV['DB_PORT_5432_TCP_PORT'] %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
