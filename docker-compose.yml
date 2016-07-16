@@ -5,6 +5,13 @@ services:
     ports:
       - "5432:5432"
 
+  transmission:
+    image: madraz/alpine-transmission
+    ports:
+      - "9091:9091"
+      - "51413/tcp:51413/tcp"
+      - "51413/udp:51413/udp"
+
   app:
     build: .
     command: bin/rails server --port 3000 --binding 0.0.0.0
@@ -15,5 +22,6 @@ services:
       - "3000:3000"
     links:
       - db
+      - transmission
     volumes:
       - .:/app
