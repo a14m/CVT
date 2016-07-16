@@ -19,11 +19,15 @@ Torrent remote downloader.
 #### bundler
 - Install bundler using `gem install bundler`
 
-#### Postgres
+#### Postgres (for local.dev)
 - Install Postgres (ex.`brew install postgres`)
+- Create Postgres User and Grant him super user privilages
+```
+$ createuser -s postgres
+```
 
 ### Setup
-
+#### local.dev
 - Clone the repo
 - Install the gems using
 ```
@@ -33,22 +37,25 @@ bundle install
 - Run `bundle exec rake db:setup`
 - Run the server
 ```sh
-bundle exec puma
-# or
-bundle exec rails server
-# or
-foreman start
+$ bundle exec puma -e development -C config/puma.rb
+$ bundle exec rails s -b 0.0.0.0
 ```
+#### docker.dev
+- Build the docker dependencies `docker-compose build`
+- Run `docker-compose run app rake db:setup`
+- Run the server `docker-compose up`
+
 ## RSpecs
 - Run the specs (test suite) using rspec
 ```sh
-bundle exec rspec
+$ bundle exec rspec
+$ docker-compose run app rspec
 ```
 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/<USER_NAME>/<REPO>
+https://github.com/mad-raz/<REPO>
 
 This project is intended to be a safe,
 welcoming space for collaboration,
