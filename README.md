@@ -21,11 +21,9 @@ Torrent remote downloader.
 
 #### Postgres (for local.dev)
 - Install Postgres (ex.`brew install postgres`)
-- Create Postgres User and Grant him privilages
+- Create Postgres User and Grant him super user privilages
 ```
-$ createuser postgres
-$ psql postgres
-# ALTER USER postgres SUPERUSER;
+$ createuser -s postgres
 ```
 
 ### Setup
