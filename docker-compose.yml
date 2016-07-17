@@ -2,8 +2,8 @@ version: '2'
 services:
   db:
     image: postgres:9.5.3
-    ports:
-      - "5432:5432"
+    expose:
+      - "5432"
 
   transmission:
     image: madraz/alpine-transmission
@@ -26,3 +26,5 @@ services:
       - transmission
     volumes:
       - .:/app
+    volumes_from:
+      - transmission
