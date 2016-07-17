@@ -26,3 +26,5 @@ services:
       - transmission
     volumes:
       - .:/app
+    volumes_from:
+      - transmission
