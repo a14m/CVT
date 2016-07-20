@@ -65,6 +65,9 @@ GEM
       sass (>= 3.4.19)
     brakeman (3.3.2)
     builder (3.2.2)
+    bullet (5.1.1)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.10.0)
     byebug (9.0.5)
     codeclimate-engine-rb (0.3.1)
       virtus (~> 1.0)
@@ -289,6 +292,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.2)
     unicode-display_width (1.1.0)
+    uniform_notifier (1.10.0)
     validates_email_format_of (1.6.3)
       i18n
     virtus (1.0.5)
@@ -313,6 +317,7 @@ DEPENDENCIES
   annotate
   bootstrap (~> 4.0.0.alpha3)
   brakeman
+  bullet
   coffee-rails
   dotenv-rails
   fabrication
