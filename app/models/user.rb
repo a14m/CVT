@@ -24,6 +24,9 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
+  # Relations
+  has_many :torrents
+
   # Validations
   validates :email,    presence: true
   validates :email,    uniqueness: { case_sensitive: false }, email_format: true
