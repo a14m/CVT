@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   subject { Fabricate.build(:user) }
+
+  it { is_expected.to have_many :torrents }
+
   describe '#email' do
     let(:invalid_emails) { ['inv@lid', 'inv@li.d', 'i±v@l.id', 'i<v@l.id'] }
     let(:valid_emails) { ['v@l.id', 'v+1@l.id', 'v.1@l.id'] }
