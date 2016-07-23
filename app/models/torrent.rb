@@ -9,8 +9,6 @@
 #  checksum        :string
 #  path            :string
 #  file            :string
-#  progress        :float
-#  status          :integer
 #  user_id         :integer          indexed
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
@@ -22,5 +20,13 @@
 
 class Torrent < ApplicationRecord
   # Relations
-  belongs_to :user
+  belongs_to :user, required: true
+
+  # Validations
+  validates :name, presence: true
+  validates :transmission_id, presence: true
+  validates :size, presence: true
+  validates :checksum, presence: true
+  validates :path, presence: true
+  validates :file, presence: true
 end
