@@ -41,6 +41,8 @@ $ bundle exec puma -e development -C config/puma.rb
 $ bundle exec rails s -b 0.0.0.0
 ```
 #### docker.dev
+- Clone the repo
+- Add `.env` file similar to the provided `.env.example`
 - Build the docker dependencies `docker-compose build`
 - Run `docker-compose run app rake db:setup`
 - Run the server `docker-compose up`

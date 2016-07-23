@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) 2016 [Ahmed Abdel-Razzak](https://github.com/artmees)
+Copyright (c) 2016 [Ahmed Abdel-Razzak](https://github.com/mad-raz)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
