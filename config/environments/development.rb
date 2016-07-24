@@ -35,6 +35,9 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: ENV.fetch('DOMAIN') }
   config.action_mailer.raise_delivery_errors = false
 
+  # allow web console to work on docker without whining about ips
+  config.web_console.whiny_requests = false
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
