@@ -1,1 +1,3 @@
-%h1= 'T _ T'
+%h1
+  %u= 'Dashboard'
+= render partial: 'users/quota', locals: { current_user: @current_user }
