@@ -11,7 +11,7 @@ gem 'MSP'                             # Less typing in Service Providers
 # front-end dependencies
 gem 'rails-assets-tether'             # Bootstrap tooltip dependency
 gem 'bootstrap', '~> 4.0.0.alpha3'    # Bootstrap 4
-gem 'nokogiri', '= 1.6.7.2'           # Pin nokogiri version
+gem 'nokogiri'                        # nokogiri problematic gem
 gem 'uglifier'                        # compressor for JavaScript assets
 gem 'haml-rails'                      # Haml as the templating engine
 gem 'coffee-rails'                    # .coffee assets and views
