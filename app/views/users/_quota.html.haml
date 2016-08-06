@@ -1,5 +1,18 @@
-.qouta
-  %h1.title= 'Quota'
-  .status
-    %h2= 'Space'
-    %h2= 'Slots'
+-# Quota Title
+.quota
+  -# Usage
+  .row
+    -# Status Bar
+    %div{ class: user.status }
+
+    -# Usage Title
+    .col-sm-4.text-xs-center
+      %h1.title= 'Usage'
+
+    -# Usage Stats
+    .col-sm-8
+      %h1
+        %span.usage= user.usage
+        %span.plan
+          %span.size= "/#{user.plan_size}"
+          %span.unit= 'GB'
