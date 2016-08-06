@@ -1,7 +1,7 @@
 # User Decorator
 class UserDecorator < ApplicationDecorator
   def plan_size
-    30
+    20
   end
 
   def usage
@@ -17,6 +17,8 @@ class UserDecorator < ApplicationDecorator
   end
 
   def status
+    return 'status green'  if percentage < 60
+    return 'status orange' if percentage.between?(60, 80)
     'status red'
   end
 end
