@@ -1,0 +1,56 @@
+.quota {
+  .row {
+    display: flex;
+  }
+
+  h1 {
+    font-weight: 100;
+    letter-spacing: -2px;
+  }
+  h2 {
+    font-weight: 100;
+    letter-spacing: -1px;
+  }
+
+  // Status Bar
+  .status {
+    display: block;
+    border-width: 0 0 0 2px;
+    border-style: solid;
+  }
+
+  .status.green{
+    border-color: $brand-success;
+  }
+
+  .status.orange{
+    border-color: $brand-warning;
+  }
+
+  .status.red{
+    border-color: $brand-danger;
+  }
+
+
+  // Status Text
+  .title {
+    padding-top: 18px;
+  }
+
+  .usage {
+    font-size: 60px;
+    letter-spacing: -10px;
+  }
+
+  .plan {
+    font-size: 30px;
+
+    .size {
+      margin-left: 10px;
+    }
+    .unit {
+      margin-left: -3px;
+      font-weight: 900;
+    }
+  }
+}
