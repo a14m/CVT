@@ -17,8 +17,8 @@ class UserDecorator < ApplicationDecorator
   end
 
   def status
-    return 'status green'  if percentage < 60
-    return 'status orange' if percentage.between?(60, 80)
-    'status red'
+    return 'green'  if percentage < 60
+    return 'orange' if percentage.between?(60, 80)
+    'red'
   end
 end
