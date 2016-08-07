@@ -9,21 +9,20 @@
 
   // Status Bar
   .status {
-    display: block;
-    border-width: 0 0 0 2px;
-    border-style: solid;
-  }
+    border-left-width: 2px;
+    border-left-style: solid;
 
-  .status.green{
-    border-color: $brand-success;
-  }
+    &.green{
+      border-color: $success;
+    }
 
-  .status.orange{
-    border-color: $brand-warning;
-  }
+    &.orange{
+      border-color: $warning;
+    }
 
-  .status.red{
-    border-color: $brand-danger;
+    &.red{
+      border-color: $danger;
+    }
   }
 
 
