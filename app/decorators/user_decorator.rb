@@ -5,7 +5,7 @@ class UserDecorator < ApplicationDecorator
   end
 
   def usage
-    16
+    11.8
   end
 
   def percentage
