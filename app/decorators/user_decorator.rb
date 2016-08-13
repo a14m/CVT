@@ -13,7 +13,7 @@ class UserDecorator < ApplicationDecorator
   end
 
   def usage_percentage
-    h.number_to_percentage(percentage, precision: 1)
+    h.number_with_precision(percentage, precision: 1)
   end
 
   def status
