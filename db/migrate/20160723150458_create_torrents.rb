@@ -6,7 +6,6 @@ class CreateTorrents < ActiveRecord::Migration[5.0]
       t.integer :size
       t.string :checksum
       t.string :path
-      t.string :file
       t.belongs_to :user, index: true
       t.timestamps
     end
