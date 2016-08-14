@@ -31,20 +31,25 @@
     padding-top: 18px;
   }
 
-  .usage {
-    font-size: 60px;
-    letter-spacing: -5px;
-  }
+  // Usage Status (and percentage)
+  .plan, .percentage {
+    &.percentage {
+      display:none;
+    }
 
-  .plan {
     font-size: 30px;
 
-    .size {
+    .usage {
+      font-size: 60px;
+      letter-spacing: -5px;
+    }
+
+    .size, .sign {
       margin-left: 10px;
       letter-spacing: -1px;
     }
+
     .unit {
-      margin-left: -3px;
       font-weight: 900;
     }
   }
