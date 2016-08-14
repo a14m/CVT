@@ -12,7 +12,10 @@
     -# Usage Stats
     .col-sm-8
       %h1
-        %span.usage= user.usage
+        %span.percentage
+          %span.usage= user.usage_percentage
+          %span.sign= '%'
         %span.plan
+          %span.usage= user.usage
           %span.size= "/#{user.plan_size}"
           %span.unit= 'GB'
