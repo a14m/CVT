@@ -15,9 +15,10 @@ Rails.application.routes.draw do
   post '/:token/password' => 'passwords#reset_password'
 
   # Dashboard
-  get '/dashboard' => 'dashboards#show'
+  get '/dashboard' => 'dashboards#index'
 
-  root to: 'dashboards#index'
+  # Landing/Static Pages
+  root to: 'landing#index'
 
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'

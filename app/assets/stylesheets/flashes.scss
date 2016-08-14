@@ -4,21 +4,21 @@
   border-radius: 0.25rem;
 
   .flash-messages-success {
-    border: 1px solid $brand-success;
-    color: $brand-success;
+    border: 1px solid $success;
+    color: $success;
     height: 100%;
   }
 
   .flash-messages-notice {
-    border: 1px solid $brand-warning;
-    color: $brand-warning;
+    border: 1px solid $warning;
+    color: $warning;
     height: 100%;
 
   }
 
   .flash-messages-error {
-    border: 1px solid $brand-danger;
-    color: $brand-danger;
+    border: 1px solid $danger;
+    color: $danger;
     height: 100%;
   }
 }

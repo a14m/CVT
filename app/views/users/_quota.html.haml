@@ -1,0 +1,21 @@
+-# Quota Title
+.quota
+  -# Usage
+  .row
+    -# Status Bar
+    .col-sm-1.status{ class: user.status }
+
+    -# Usage Title
+    .col-sm-3.text-xs-left
+      %h1.title= 'Usage'
+
+    -# Usage Stats
+    .col-sm-8
+      %h1
+        %span.percentage
+          %span.usage= user.usage_percentage
+          %span.sign= '%'
+        %span.plan
+          %span.usage= user.usage
+          %span.size= "/#{user.plan_size}"
+          %span.unit= 'GB'

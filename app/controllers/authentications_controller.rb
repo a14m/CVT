@@ -22,7 +22,7 @@ class AuthenticationsController < ApplicationController
     @user = login(
       sign_in_params[:email],
       sign_in_params[:password],
-      sign_in_params[:remember_me].to_i > 0
+      sign_in_params[:remember_me].to_i.positive?
     )
 
     if @user
