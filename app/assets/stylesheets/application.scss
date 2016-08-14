@@ -8,7 +8,7 @@ $danger:  $brand-danger;
 
 // application specific styles
 @import './authentications.scss';
-@import './dashboard.scss';
+@import './users/_quota.scss';
 @import './flashes.scss';
 
 input, button, div, small, a {
