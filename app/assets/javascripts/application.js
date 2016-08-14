@@ -15,5 +15,4 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require parsley
-//= require jquery-fileupload/basic
 //= require_tree .
