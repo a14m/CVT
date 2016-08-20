@@ -1,4 +1,5 @@
-= form_for :torrent,
+= form_for :torrent, url: torrents_path,
   html: { class: 'center-block', multipart: true } do |f|
 
-  = f.file_field :torrent
+  = f.file_field :torrent_file
+  = f.submit

@@ -46,3 +46,5 @@ en:
   passwords_mailer:
     reset_password_email:
       subject: 'Reset Password Instructions'
+  torrents:
+    file_added: 'Successfully added file'
