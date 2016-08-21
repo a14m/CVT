@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/mad-raz/jack_up.git
+  revision: b17271090e8341d0c04d858960af16d3c8f6fcc4
+  specs:
+    jack_up (0.2.0)
+      rails (~> 5.0)
+
+GIT
   remote: git://github.com/mad-raz/sorcery.git
   revision: 418ea4fce3a48bbe61f32c67eb3ba17fb3a0af2f
   branch: 1-0-x
@@ -315,6 +322,7 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (3.0.1)
       execjs (>= 0.3.0, < 3)
+    underscore-rails (1.8.3)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
@@ -351,6 +359,7 @@ DEPENDENCIES
   fabrication
   faker
   haml-rails
+  jack_up!
   jquery-rails
   letter_opener
   listen
@@ -376,6 +385,7 @@ DEPENDENCIES
   turbolinks
   tzinfo-data
   uglifier
+  underscore-rails
   validates_email_format_of
   web-console
 

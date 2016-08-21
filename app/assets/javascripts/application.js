@@ -15,4 +15,6 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require parsley
+//= require underscore
+//= require jack_up
 //= require_tree .
