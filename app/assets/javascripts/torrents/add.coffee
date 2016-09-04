@@ -11,16 +11,37 @@ setupFileDropClick = (fileDrop, attachment)->
     attachment[0].click()
   )
 
-setupFileDrop = (fileDrop, attachment)->
+fileSentToServer = (fileDrop)->
+  removeDragHoverEffect(fileDrop)
   status = fileDrop.children('.status').first()
+  status.removeClass('red')
+  status.removeClass('green')
+  status.addClass('orange')
 
+uploadSuccess = (fileDrop)->
+  status = fileDrop.children('.status').first()
+  status.removeClass('red')
+  status.removeClass('orange')
+  status.addClass('green')
+  null
+
+uploadFailure = (fileDrop)->
+  status = fileDrop.children('.status').first()
+  status.removeClass('orange')
+  status.removeClass('green')
+  status.addClass('red')
+  null
+
+setupFileDrop = (fileDrop, attachment)->
   jackUp = new JackUp.Processor(path: '/torrents')
   jackUp.on "upload:sentToServer", (e, options) ->
-    removeDragHoverEffect(fileDrop)
+    fileSentToServer(fileDrop)
 
   jackUp.on "upload:success", (e, options) ->
+    uploadSuccess(fileDrop)
 
   jackUp.on "upload:failure", (e, options) ->
+    uploadFailure(fileDrop)
 
   fileDrop.jackUpDragAndDrop(jackUp)
   attachment.jackUpAjax(jackUp)
