@@ -1,3 +1,11 @@
+addDragHoverEffect = (fileDrop)->
+  fileDrop.css(backgroundColor: '#eff0f1')
+  null
+
+removeDragHoverEffect = (fileDrop)->
+  fileDrop.css(backgroundColor: '#ffffff')
+  null
+
 setupFileDropClick = (fileDrop, attachment)->
   fileDrop.on('click', ->
     attachment[0].click()
@@ -8,19 +16,11 @@ setupFileDrop = (fileDrop, attachment)->
 
   jackUp = new JackUp.Processor(path: '/torrents')
   jackUp.on "upload:sentToServer", (e, options) ->
-    status.removeClass('red')
-    status.addClass('orange')
-    status.removeClass('green')
+    removeDragHoverEffect(fileDrop)
 
   jackUp.on "upload:success", (e, options) ->
-    status.removeClass('red')
-    status.removeClass('orange')
-    status.addClass('green')
 
   jackUp.on "upload:failure", (e, options) ->
-    status.addClass('red')
-    status.removeClass('orange')
-    status.removeClass('green')
 
   fileDrop.jackUpDragAndDrop(jackUp)
   attachment.jackUpAjax(jackUp)
@@ -31,9 +31,13 @@ document.addEventListener('turbolinks:load', ->
   return unless fileDrop.length > 0
   attachment = $('.attachment')
 
-  $(document).bind 'drop dragover', (e) ->
+  $(document).bind 'dragover', (e) ->
+    addDragHoverEffect(fileDrop)
     e.preventDefault()
-    # setup the drag and drop span to show the hover effect on drag and drop
+
+  $(document).bind 'dragleave drop', (e) ->
+    removeDragHoverEffect(fileDrop)
+    e.preventDefault()
 
   setupFileDropClick(fileDrop, attachment)
   setupFileDrop(fileDrop, attachment)
