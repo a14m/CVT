@@ -13,24 +13,16 @@ setupFileDropClick = (fileDrop, attachment)->
 
 fileSentToServer = (fileDrop)->
   removeDragHoverEffect(fileDrop)
-  status = fileDrop.children('.status').first()
-  status.removeClass('red')
-  status.removeClass('green')
-  status.addClass('orange')
+  status = fileDrop.children('.status')
+  status.removeClass('red').removeClass('green').addClass('orange')
 
-uploadSuccess = (fileDrop)->
-  status = fileDrop.children('.status').first()
-  status.removeClass('red')
-  status.removeClass('orange')
-  status.addClass('green')
-  null
+uploadSuccess = (e, options, fileDrop)->
+  status = fileDrop.children('.status')
+  status.removeClass('red').removeClass('orange').addClass('green')
 
-uploadFailure = (fileDrop)->
-  status = fileDrop.children('.status').first()
-  status.removeClass('orange')
-  status.removeClass('green')
-  status.addClass('red')
-  null
+uploadFailure = (e, options, fileDrop)->
+  status = fileDrop.children('.status')
+  status.removeClass('orange').removeClass('green').addClass('red')
 
 setupFileDrop = (fileDrop, attachment)->
   jackUp = new JackUp.Processor(path: '/torrents')
@@ -38,10 +30,10 @@ setupFileDrop = (fileDrop, attachment)->
     fileSentToServer(fileDrop)
 
   jackUp.on "upload:success", (e, options) ->
-    uploadSuccess(fileDrop)
+    uploadSuccess(e, options, fileDrop)
 
   jackUp.on "upload:failure", (e, options) ->
-    uploadFailure(fileDrop)
+    uploadFailure(e, options, fileDrop)
 
   fileDrop.jackUpDragAndDrop(jackUp)
   attachment.jackUpAjax(jackUp)
@@ -59,6 +51,10 @@ document.addEventListener('turbolinks:load', ->
   $(document).bind 'dragleave drop', (e) ->
     removeDragHoverEffect(fileDrop)
     e.preventDefault()
+
+  # allow fileDrop to send feedback about uploading file
+  fileDrop.bind 'drop', (e) ->
+    fileSentToServer(fileDrop)
 
   setupFileDropClick(fileDrop, attachment)
   setupFileDrop(fileDrop, attachment)
