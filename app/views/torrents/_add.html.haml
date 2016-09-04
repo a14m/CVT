@@ -3,10 +3,11 @@
     .col-sm-1.status
 
     = form_for :torrent, url: torrents_path,
-      html: { class: 'col-sm-11', multipart: true } do |f|
+      html: { class: 'col-sm-9', multipart: true } do |f|
 
       .info
         %h4.drag.text-xs-center= I18n.t('torrents.drag_drop')
+        %h5.text-xs-center= I18n.t('or')
         %h5.text-xs-center= I18n.t('torrents.click_upload')
 
       = f.file_field :torrent_file, class: 'attachment'
