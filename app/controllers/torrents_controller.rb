@@ -3,8 +3,9 @@ class TorrentsController < ApplicationController
   # POST /torrents
   def create
     # TorrentCreation.call(torrent_params)
-    flash[:success] = I18n.t('torrents.file_added')
-    redirect_to dashboard_path
+    render status: 201, json: { message: I18n.t('torrents.file_added') }
+  rescue TorrentCreationError => e
+    render status: 403, json: { message: I18n.t(e.message) }
   end
 
   private

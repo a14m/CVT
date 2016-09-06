@@ -48,6 +48,6 @@ en:
     reset_password_email:
       subject: 'Reset Password Instructions'
   torrents:
-    file_added: 'Successfully added file'
+    file_added: 'Torrent file added successfuly'
     drag_drop: 'Drag and Drop'
     click_upload: 'click to browse files to upload'
