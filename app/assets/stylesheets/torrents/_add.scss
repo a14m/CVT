@@ -34,5 +34,13 @@
         border-color: $danger;
       }
     }
+
+    .info {
+      display: block;
+    }
+
+    .response {
+      display: none;
+    }
   }
 }
