@@ -6,11 +6,6 @@ removeDragHoverEffect = (fileDrop)->
   fileDrop.css(backgroundColor: '#ffffff')
   null
 
-setupFileDropClick = (fileDrop, attachment)->
-  fileDrop.on('click', ->
-    attachment[0].click()
-  )
-
 fileSentToServer = (fileDrop)->
   removeDragHoverEffect(fileDrop)
   status = fileDrop.children('.status')
@@ -33,6 +28,11 @@ uploadFailure = (e, options, fileDrop)->
   status = fileDrop.children('.status')
   status.removeClass('orange').removeClass('green').addClass('red')
   updateResponseInfo(fileDrop, options)
+
+setupFileDropClick = (fileDrop, attachment)->
+  fileDrop.on('click', ->
+    attachment[0].click()
+  )
 
 setupFileDrop = (fileDrop, attachment)->
   jackUp = new JackUp.Processor(path: '/torrents')
