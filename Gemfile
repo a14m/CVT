@@ -24,9 +24,6 @@ gem 'jquery-rails'                    # jquery as the JavaScript library
 gem 'sass-rails'                      # SCSS for stylesheets
 gem 'turbolinks'                      # navigating your faster
 gem 'parsley-rails'                   # awesome form validation
-gem 'underscore-rails'                # underscore.js
-gem 'jack_up', github: 'mad-raz/jack_up' # AJAX file uploading
-gem 'rack-raw-upload'                 # Jackup dependency
 
 group :development, :test do
   gem 'bullet'                        # kill N+1 queries and unused eager loading
