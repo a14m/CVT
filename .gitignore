@@ -19,3 +19,4 @@
 *.swp
 .rbenv-vars
 .env
+tags
