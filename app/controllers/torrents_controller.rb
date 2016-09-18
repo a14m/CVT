@@ -4,6 +4,8 @@ class TorrentsController < ApplicationController
   def create
     TorrentCreation.call(user: current_user, file: torrent_params[:file])
     render status: 201, json: { message: I18n.t('torrents.file_added') }
+  rescue InvalidFileError => e
+    render status: 400, json: { message: I18n.t(e.message) }
   rescue TorrentCreationError => e
     render status: 403, json: { message: I18n.t(e.message) }
   end

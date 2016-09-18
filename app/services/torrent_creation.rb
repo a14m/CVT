@@ -13,10 +13,12 @@ class TorrentCreation
   private
 
   def transmission_add(file)
-    Transmission::RPC::Torrent.add(
+    torrent = Transmission::RPC::Torrent.add(
       metainfo: Base64.strict_encode64(file.read),
       paused: true
     )
+    fail InvalidFileError, 'torrents.invalid_file' unless torrent
+    torrent
   end
 
   def create_torrent(user, torrent, file)
