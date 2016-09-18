@@ -51,4 +51,4 @@ en:
     file_added: 'Torrent file added successfuly'
     drag_drop: 'Drag and Drop'
     click_upload: 'click to browse files to upload'
-    invalid_file: 'Unsupported file type'
+    invalid_file: 'Unsupported or invalid file'
