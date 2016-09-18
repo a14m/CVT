@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20160814153000) do
     t.integer  "transmission_id"
     t.integer  "size"
     t.string   "checksum"
-    t.integer  "user_id"
+    t.uuid     "user_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "torrent_file_name"

@@ -7,7 +7,7 @@
 #  transmission_id      :integer
 #  size                 :integer
 #  checksum             :string
-#  user_id              :integer          indexed
+#  user_id              :uuid             indexed
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  torrent_file_name    :string
