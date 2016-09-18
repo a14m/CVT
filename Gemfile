@@ -24,6 +24,7 @@ gem 'jquery-rails'                    # jquery as the JavaScript library
 gem 'sass-rails'                      # SCSS for stylesheets
 gem 'turbolinks'                      # navigating your faster
 gem 'parsley-rails'                   # awesome form validation
+gem 'dropzonejs-rails'                # drop zone drag and drop rails gem
 
 group :development, :test do
   gem 'bullet'                        # kill N+1 queries and unused eager loading

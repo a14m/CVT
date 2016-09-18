@@ -108,6 +108,8 @@ GEM
       activemodel-serializers-xml (~> 1.0)
       activesupport (~> 5.0)
       request_store (~> 1.0)
+    dropzonejs-rails (0.7.3)
+      rails (> 3.1)
     equalizer (0.0.11)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -348,6 +350,7 @@ DEPENDENCIES
   coffee-rails
   dotenv-rails
   draper (~> 3.0.0.pre1)
+  dropzonejs-rails
   fabrication
   faker
   haml-rails
