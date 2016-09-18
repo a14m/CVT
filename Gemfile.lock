@@ -1,19 +1,19 @@
 GIT
-  remote: git://github.com/Jarred-Sumner/transmission-rpc.git
-  revision: b7268191533be718d49d90bb6fb4b9a58c1f3edb
-  specs:
-    transmission-rpc (0.1.1)
-      activesupport
-      json
-      rest-client
-
-GIT
   remote: git://github.com/mad-raz/sorcery.git
   revision: 418ea4fce3a48bbe61f32c67eb3ba17fb3a0af2f
   branch: 1-0-x
   specs:
     sorcery (0.9.1)
       bcrypt (~> 3.1)
+
+GIT
+  remote: git://github.com/mad-raz/transmission-rpc.git
+  revision: 9ecc4ade33a25be5eca38051928f7ef3726e2934
+  specs:
+    transmission-rpc (0.1.1)
+      activesupport
+      json
+      rest-client
 
 GEM
   remote: https://rubygems.org/
