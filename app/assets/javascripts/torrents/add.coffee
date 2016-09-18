@@ -12,59 +12,62 @@ Dropzone.options.fileDrop = {
   previewTemplate: '<div></div>'
 }
 
-addDragHoverEffect = (fileDrop)->
-  fileDrop.css(backgroundColor: '#eff0f1')
+addDragHoverEffect = ($fileDrop)->
+  $fileDrop.css(backgroundColor: '#eff0f1')
   null
 
-removeDragHoverEffect = (fileDrop)->
-  fileDrop.css(backgroundColor: '#ffffff')
+removeDragHoverEffect = ($fileDrop)->
+  $fileDrop.css(backgroundColor: '#ffffff')
   null
 
-updateResponseInfo = (fileDrop, response) ->
-  fileDrop.find('.info').hide()
-  fileDrop.find('.response').show().find('h4').text(response.message)
+updateResponseInfo = ($fileDrop, response) ->
+  $fileDrop.find('.info').hide()
+  $responseHeader = $fileDrop.find('.response').show().find('h4')
+  $responseHeader.text(response.message) if response.message
+  $responseHeader.text(response) unless response.message
   setTimeout( ->
     window.location.reload()
   , 3000)
 
-processing = (fileDrop)->
-  status = fileDrop.children('.status')
+processing = ($fileDrop)->
+  status = $fileDrop.children('.status')
   status.removeClass('red').removeClass('green').addClass('orange')
 
-success = (fileDrop, response)->
-  status = fileDrop.children('.status')
+success = ($fileDrop, response)->
+  status = $fileDrop.children('.status')
   status.removeClass('red').removeClass('orange').addClass('green')
-  updateResponseInfo(fileDrop, response)
+  updateResponseInfo($fileDrop, response)
 
-error = (fileDrop, response, _xhr)->
-  status = fileDrop.children('.status')
+error = ($fileDrop, response, _xhr)->
+  console.log response
+  status = $fileDrop.children('.status')
   status.removeClass('orange').removeClass('green').addClass('red')
-  updateResponseInfo(fileDrop, response)
+  updateResponseInfo($fileDrop, response)
 
-setupDropzone = (fileDrop) ->
+setupDropzone = ($fileDrop) ->
   dropzone = new Dropzone('#file-drop')
 
   dropzone.on('addedfile', () ->
-    processing(fileDrop)
+    processing($fileDrop)
   )
   dropzone.on('error', (file, errorMsg, response) ->
-    error(fileDrop, errorMsg, response)
+    error($fileDrop, errorMsg, response)
   )
   dropzone.on('success', (file, response) ->
-    success(fileDrop, response)
+    success($fileDrop, response)
   )
 
 document.addEventListener('turbolinks:load', ->
-  fileDrop = $('.file-drop')
-  return unless fileDrop.length > 0
+  $fileDrop = $('.file-drop')
+  return unless $fileDrop.length > 0
 
   $(document).bind 'dragover', (e) ->
-    addDragHoverEffect(fileDrop)
+    addDragHoverEffect($fileDrop)
     e.preventDefault()
 
   $(document).bind 'dragleave drop', (e) ->
-    removeDragHoverEffect(fileDrop)
+    removeDragHoverEffect($fileDrop)
     e.preventDefault()
 
-  setupDropzone(fileDrop)
+  setupDropzone($fileDrop)
 )
