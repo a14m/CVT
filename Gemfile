@@ -10,7 +10,7 @@ gem 'MSP'                             # Less typing in Service Providers
 gem 'draper', '~>3.0.0.pre1'          # Decorators/View-Models for Rails
 gem 'paperclip'                       # Easy file attachment management
 gem 'tzinfo-data'                     # Timezone Data
-gem 'transmission-rpc'                # Transmission torrent client
+gem 'transmission-rpc', github: 'Jarred-Sumner/transmission-rpc' # Transmission torrent client
 gem 'pundit'                          # Authorization system
 
 # front-end dependencies

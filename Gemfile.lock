@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/Jarred-Sumner/transmission-rpc.git
+  revision: b7268191533be718d49d90bb6fb4b9a58c1f3edb
+  specs:
+    transmission-rpc (0.1.1)
+      activesupport
+      json
+      rest-client
+
+GIT
   remote: git://github.com/mad-raz/sorcery.git
   revision: 418ea4fce3a48bbe61f32c67eb3ba17fb3a0af2f
   branch: 1-0-x
@@ -96,7 +105,7 @@ GEM
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.2.5)
-    domain_name (0.5.20160615)
+    domain_name (0.5.20160826)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.1.1)
     dotenv-rails (2.1.1)
@@ -304,10 +313,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
-    transmission-rpc (0.1.1)
-      activesupport
-      json
-      rest-client
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
@@ -375,7 +380,7 @@ DEPENDENCIES
   sass-rails
   shoulda-matchers
   sorcery!
-  transmission-rpc
+  transmission-rpc!
   turbolinks
   tzinfo-data
   uglifier
