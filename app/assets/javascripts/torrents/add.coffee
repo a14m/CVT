@@ -30,18 +30,17 @@ updateResponseInfo = ($fileDrop, response) ->
   , 3000)
 
 processing = ($fileDrop)->
-  status = $fileDrop.children('.status')
-  status.removeClass('red').removeClass('green').addClass('orange')
+  $status = $fileDrop.children('.status')
+  $status.removeClass('red green').addClass('orange')
 
 success = ($fileDrop, response)->
-  status = $fileDrop.children('.status')
-  status.removeClass('red').removeClass('orange').addClass('green')
+  $status = $fileDrop.children('.status')
+  $status.removeClass('red orange').addClass('green')
   updateResponseInfo($fileDrop, response)
 
 error = ($fileDrop, response, _xhr)->
-  console.log response
-  status = $fileDrop.children('.status')
-  status.removeClass('orange').removeClass('green').addClass('red')
+  $status = $fileDrop.children('.status')
+  $status.removeClass('orange green').addClass('red')
   updateResponseInfo($fileDrop, response)
 
 setupDropzone = ($fileDrop) ->
