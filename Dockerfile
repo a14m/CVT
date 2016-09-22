@@ -17,6 +17,7 @@ RUN mkdir /app
 WORKDIR /app
 COPY Gemfile Gemfile.lock /app/
 
+RUN bundle config github.https true
 RUN bundle install --clean --binstubs="$BUNDLE_BIN"
 
 # Clean up
