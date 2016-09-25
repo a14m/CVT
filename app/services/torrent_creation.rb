@@ -4,9 +4,10 @@ class TorrentCreation
 
   def call(user:, file:)
     transmission_torrent = transmission_add(file)
-    # TODO: check user permissions to add the torrent
+    policy = TorrentPolicy.new(user, transmission_torrent)
+    policy.add?
     torrent = create_torrent(user, transmission_torrent, file)
-    # TODO: start the torrent on transmission
+    transmission_torrent.start! if policy.start?
     torrent
   end
 
