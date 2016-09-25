@@ -30,7 +30,7 @@ class Torrent < ApplicationRecord
   validates :name, presence: true
   validates :transmission_id, presence: true
   validates :size, presence: true
-  validates :checksum, presence: true
+  validates :checksum, presence: true, uniqueness: { scope: :user }
   validates_attachment :torrent,
     presence: true,
     content_type: { content_type: 'application/x-bittorrent' }
