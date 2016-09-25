@@ -19,6 +19,8 @@ class TorrentCreation
     )
     fail InvalidFileError, 'torrents.invalid_file' unless torrent
     torrent
+  rescue NoMethodError => e
+    raise ApplicationError, e
   end
 
   def create_torrent(user, torrent, file)
