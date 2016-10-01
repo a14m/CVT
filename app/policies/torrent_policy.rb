@@ -1,5 +1,11 @@
 # Torrent policy
-class TorrentPolicy < Struct.new(:user, :torrent)
+class TorrentPolicy
+  attr_reader :user, :torrent
+
+  def initialize(user, torrent)
+    @user = user
+    @torrent = torrent
+  end
 
   def add?
     fail TorrentCreationError, 'subscription.expired' if expired_subscription?
