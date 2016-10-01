@@ -51,6 +51,7 @@ group :test do
   gem 'faker'                         # Fake info for db
   gem 'fabrication'                   # Fabricate testing objects
   gem 'shoulda-matchers'              # Validation testing made simple
+  gem 'timecop'                       # time travel capabilities for testing
   # gem 'codeclimate-test-reporter', require: nil # CodeClimate coverage
   # gem 'database_cleaner'              # db cleaner for test env.
 end
