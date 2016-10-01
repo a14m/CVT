@@ -18,7 +18,6 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    MSP (1.0.2)
     actioncable (5.0.0)
       actionpack (= 5.0.0)
       nio4r (~> 1.2)
@@ -348,7 +347,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  MSP
   annotate
   bootstrap (= 4.0.0.alpha3)
   brakeman

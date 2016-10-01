@@ -6,7 +6,6 @@ gem 'puma'                            # Application server
 gem 'redis'                           # Redis adapter
 gem 'sorcery', github: 'mad-raz/sorcery', branch: '1-0-x' # authentication
 gem 'validates_email_format_of'       # Validate e-mail addreses
-gem 'MSP'                             # Less typing in Service Providers
 gem 'draper', '~>3.0.0.pre1'          # Decorators/View-Models for Rails
 gem 'paperclip'                       # Easy file attachment management
 gem 'tzinfo-data'                     # Timezone Data
