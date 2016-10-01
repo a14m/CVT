@@ -20,7 +20,7 @@ Metrics/MethodLength:
   Max: 15
 
 Metrics/AbcSize:
-  Max: 20
+  Max: 25
 
 Style/Documentation:
   Exclude:

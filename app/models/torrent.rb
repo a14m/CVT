@@ -7,8 +7,7 @@
 #  transmission_id      :integer
 #  size                 :integer
 #  checksum             :string
-#  path                 :string
-#  user_id              :integer          indexed
+#  user_id              :uuid             indexed
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  torrent_file_name    :string
@@ -30,9 +29,8 @@ class Torrent < ApplicationRecord
   # Validations
   validates :name, presence: true
   validates :transmission_id, presence: true
-  validates :size, presence: true
-  validates :checksum, presence: true
-  validates :path, presence: true
+  validates :size, presence: true, numericality: { greater_than: 0 }
+  validates :checksum, presence: true, uniqueness: { scope: :user_id }
   validates_attachment :torrent,
     presence: true,
     content_type: { content_type: 'application/x-bittorrent' }

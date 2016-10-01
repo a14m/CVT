@@ -19,4 +19,12 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_presence_of(:password) }
     it { is_expected.to validate_length_of(:password).is_at_least(8) }
   end
+
+  it '#quota' do
+    expect(subject.quota).to eq 20 * 1024 * 1024 * 1024
+  end
+
+  it '#expires_at' do
+    expect(subject.expires_at).to eq Date.parse('2016-12-31')
+  end
 end

@@ -6,11 +6,10 @@ gem 'puma'                            # Application server
 gem 'redis'                           # Redis adapter
 gem 'sorcery', github: 'mad-raz/sorcery', branch: '1-0-x' # authentication
 gem 'validates_email_format_of'       # Validate e-mail addreses
-gem 'MSP'                             # Less typing in Service Providers
 gem 'draper', '~>3.0.0.pre1'          # Decorators/View-Models for Rails
 gem 'paperclip'                       # Easy file attachment management
 gem 'tzinfo-data'                     # Timezone Data
-gem 'transmission-rpc'                # Transmission torrent client
+gem 'transmission-rpc', github: 'mad-raz/transmission-rpc' # Transmission torrent client
 gem 'pundit'                          # Authorization system
 
 # front-end dependencies
@@ -24,8 +23,7 @@ gem 'jquery-rails'                    # jquery as the JavaScript library
 gem 'sass-rails'                      # SCSS for stylesheets
 gem 'turbolinks'                      # navigating your faster
 gem 'parsley-rails'                   # awesome form validation
-gem 'underscore-rails'                # underscore.js
-gem 'jack_up', github: 'mad-raz/jack_up' # AJAX file uploading
+gem 'dropzonejs-rails'                # drop zone drag and drop rails gem
 
 group :development, :test do
   gem 'bullet'                        # kill N+1 queries and unused eager loading
@@ -52,6 +50,7 @@ group :test do
   gem 'faker'                         # Fake info for db
   gem 'fabrication'                   # Fabricate testing objects
   gem 'shoulda-matchers'              # Validation testing made simple
+  gem 'timecop'                       # time travel capabilities for testing
   # gem 'codeclimate-test-reporter', require: nil # CodeClimate coverage
   # gem 'database_cleaner'              # db cleaner for test env.
 end
