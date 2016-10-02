@@ -17,5 +17,5 @@
           %span.sign= '%'
         %span.plan
           %span.usage= user.usage
-          %span.size= "/#{user.plan_size}"
-          %span.unit= 'GB'
+          %span.size= "/#{user.plan_size[0...-2]}"
+          %span.unit= user.plan_size[-2..-1]

@@ -1,15 +1,15 @@
 # User Decorator
 class UserDecorator < ApplicationDecorator
-  def plan_size
-    20
-  end
-
   def usage
-    11.8
+    user.usage / (1024.0 * 1024.0 * 1024.0)
   end
 
   def percentage
-    usage / plan_size.to_f * 100
+    user.usage.to_f / user.quota.to_f * 100
+  end
+
+  def plan_size
+    h.number_to_human_size(user.quota)
   end
 
   def usage_percentage
