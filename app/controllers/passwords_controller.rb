@@ -7,7 +7,7 @@ class PasswordsController < ApplicationController
   # POST /reset_password
   def reset_password_instructions
     @user = User.find_by(email: params[:password_reset][:email])
-    @user.deliver_reset_password_instructions! if @user
+    @user&.deliver_reset_password_instructions!
     flash[:success] = I18n.t('passwords.reset_instructions_sent')
     redirect_to root_path
   end

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   # Dashboard
   get '/dashboard' => 'dashboards#index'
 
+  resource :torrents
+
   # Landing/Static Pages
   root to: 'landing#index'
 

@@ -1,0 +1,13 @@
+.row
+  .file-drop
+    .col-sm-1.status
+
+    = form_for :torrent, url: torrents_path,
+      html: { id: 'file-drop', class: 'col-sm-9', multipart: true } do |f|
+      .info.dz-message
+        %h4.drag.text-xs-center= I18n.t('torrents.drag_drop')
+        %h5.text-xs-center= I18n.t('or')
+        %h5.text-xs-center= I18n.t('torrents.click_upload')
+
+      .response
+        %h4.drag.text-xs-center= ''

@@ -19,3 +19,5 @@
 *.swp
 .rbenv-vars
 .env
+tags
+public/system/torrents/

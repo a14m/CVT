@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  or: 'or'
   authentications:
     sign_in: 'Sign In'
     sign_up: 'Sign Up'
@@ -46,3 +47,13 @@ en:
   passwords_mailer:
     reset_password_email:
       subject: 'Reset Password Instructions'
+  torrents:
+    file_added: 'Torrent file added successfuly'
+    drag_drop: 'Drag and Drop'
+    click_upload: 'click to browse files to upload'
+    invalid_file: 'Unsupported or invalid file'
+    service_stopped: 'Internal Server Service Error'
+    duplicate_file: 'Torrent file was already added'
+  subscription:
+    expired: 'Subscription Expired, please renew your subscription'
+    enough_space: 'No space available to add this torrent'

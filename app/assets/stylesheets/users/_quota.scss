@@ -1,56 +1,56 @@
-.quota {
-  .row {
+.row {
+  .quota {
     display: flex;
-  }
 
-  h1 {
-    font-weight: 100;
-  }
-
-  // Status Bar
-  .status {
-    border-left-width: 2px;
-    border-left-style: solid;
-
-    &.green{
-      border-color: $success;
+    h1 {
+      font-weight: 100;
     }
 
-    &.orange{
-      border-color: $warning;
+    // Status Bar
+    .status {
+      border-left-width: 2px;
+      border-left-style: solid;
+
+      &.green{
+        border-color: $success;
+      }
+
+      &.orange{
+        border-color: $warning;
+      }
+
+      &.red{
+        border-color: $danger;
+      }
     }
 
-    &.red{
-      border-color: $danger;
-    }
-  }
 
-
-  // Status Text
-  .title {
-    padding-top: 18px;
-  }
-
-  // Usage Status (and percentage)
-  .plan, .percentage {
-    &.percentage {
-      display:none;
+    // Status Text
+    .title {
+      padding-top: 18px;
     }
 
-    font-size: 30px;
+    // Usage Status (and percentage)
+    .plan, .percentage {
+      &.percentage {
+        display:none;
+      }
 
-    .usage {
-      font-size: 60px;
-      letter-spacing: -5px;
-    }
+      font-size: 30px;
 
-    .size, .sign {
-      margin-left: 10px;
-      letter-spacing: -1px;
-    }
+      .usage {
+        font-size: 60px;
+        letter-spacing: -5px;
+      }
 
-    .unit {
-      font-weight: 900;
+      .size, .sign {
+        margin-left: 10px;
+        letter-spacing: -1px;
+      }
+
+      .unit {
+        font-weight: 900;
+      }
     }
   }
 }

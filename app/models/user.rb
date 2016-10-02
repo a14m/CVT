@@ -37,4 +37,16 @@ class User < ApplicationRecord
   def password_required?
     new_record? || changes[:crypted_password]
   end
+
+  def usage
+    torrents.sum(:size)
+  end
+
+  def quota
+    20 * 1024 * 1024 * 1024
+  end
+
+  def expires_at
+    Date.parse('2016-12-31')
+  end
 end

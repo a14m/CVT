@@ -1,0 +1,46 @@
+.row {
+  .file-drop {
+    display: flex;
+    min-height: 150px;
+    cursor: pointer;
+
+    .drag {
+      margin-top: 50px;
+    }
+
+    h4, h5 {
+      font-weight: 100;
+    }
+
+    .attachment {
+      visibility: hidden;
+      display: none;
+    }
+
+    // Status Bar
+    .status {
+      border-left-width: 2px;
+      border-left-style: solid;
+
+      &.green{
+        border-color: $success;
+      }
+
+      &.orange{
+        border-color: $warning;
+      }
+
+      &.red{
+        border-color: $danger;
+      }
+    }
+
+    .info {
+      display: block;
+    }
+
+    .response {
+      display: none;
+    }
+  }
+}
