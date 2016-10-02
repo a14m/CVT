@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def current_user
+    @current_user ||= super && User.includes(:torrents).find(@current_user.id)
+  end
+
   def not_authenticated
     redirect_to sign_in_path, notice: I18n.t('authentications.login_required')
   end
