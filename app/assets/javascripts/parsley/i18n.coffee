@@ -1,4 +1,4 @@
-window.ParsleyConfig.i18n.en = $.extend(window.ParsleyConfig.i18n.en || {}, {
+window.Parsley.addMessages('en', {
   defaultMessage: "This value seems to be invalid.",
   type: {
     email:        "Invalid email.",
