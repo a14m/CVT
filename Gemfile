@@ -25,7 +25,7 @@ gem 'parsley-rails'                   # awesome form validation
 gem 'dropzonejs-rails'                # drop zone drag and drop rails gem
 
 group :development, :test do
-  gem 'bullet'                        # kill N+1 queries and unused eager loading
+  # gem 'bullet'                        # kill N+1 queries and unused eager loading
   gem 'pry-byebug'                    # Debugger calling 'beybug'
   gem 'pry-rails'                     # Use Pry instead of IRB in rails console
   gem 'dotenv-rails'                  # Loads environment variables from `.env`
