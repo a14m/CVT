@@ -20,7 +20,7 @@ class TorrentPolicy
   private
 
   def enough_space?
-    total_size = user.torrents.sum(:size) + torrent.size
+    total_size = user.usage + torrent.size
     total_size < user.quota
   end
 

@@ -41,13 +41,13 @@ RSpec.describe TorrentPolicy, type: :policy do
 
   describe '#enough_space?' do
     it 'returns true' do
-      expect(user.torrents).to receive(:sum).and_return 0
+      expect(user).to receive(:usage).and_return 0
       expect(torrent).to receive(:size).and_return 1
       expect(subject.send(:enough_space?)).to be_truthy
     end
 
     it 'returns false' do
-      expect(user.torrents).to receive(:sum).and_return user.quota
+      expect(user).to receive(:usage).and_return user.quota
       expect(torrent).to receive(:size).and_return 1
       expect(subject.send(:enough_space?)).to be_falsy
     end
