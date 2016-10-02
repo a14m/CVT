@@ -10,7 +10,6 @@ gem 'draper', '~>3.0.0.pre1'          # Decorators/View-Models for Rails
 gem 'paperclip'                       # Easy file attachment management
 gem 'tzinfo-data'                     # Timezone Data
 gem 'transmission-rpc', github: 'mad-raz/transmission-rpc' # Transmission torrent client
-gem 'pundit'                          # Authorization system
 
 # front-end dependencies
 gem 'rails-assets-tether'             # Bootstrap tooltip dependency
