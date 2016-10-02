@@ -1,7 +1,10 @@
 # User Decorator
 class UserDecorator < ApplicationDecorator
   def usage
-    user.usage / (1024.0 * 1024.0 * 1024.0)
+    h.number_with_precision(
+      user.usage / (1024.0 * 1024.0 * 1024.0),
+      precision: 1
+    )
   end
 
   def percentage
