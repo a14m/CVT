@@ -9,10 +9,10 @@
     - torrents.each do |torrent|
       = link_to torrent_path(torrent) do
         .torrent
-          .col-sm-1.torrent-status{ class: torrent.status }
-          .col-sm-8
+          .col-xs-1.torrent-status{ class: torrent.status }
+          .col-xs-8
             = torrent.name
-          .col-sm-3.stats
+          .col-xs-3.stats
             %span.percentage
               %span= torrent.percentage
               %span.sign= '%'
