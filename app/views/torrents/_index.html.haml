@@ -14,8 +14,8 @@
             = torrent.name
           .col-sm-3.stats
             %span.percentage
-              %span= '29.1'
+              %span= torrent.percentage
               %span.sign= '%'
             %span.usage
-              %span= '80/799'
-              %span.unit= ' MB'
+              %span= torrent.size_status[0...-2]
+              %span.unit= torrent.size_status[-2..-1]
