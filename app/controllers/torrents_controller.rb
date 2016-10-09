@@ -1,5 +1,12 @@
 # Torrents Controller
 class TorrentsController < ApplicationController
+  decorates_assigned :torrent
+
+  # GET /torrents/:id
+  def show
+    @torrent = current_user.torrents.find(params[:id]).decorate
+  end
+
   # POST /torrents
   def create
     TorrentCreation.new.call(user: current_user, file: torrent_params[:file])
