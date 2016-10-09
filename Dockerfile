@@ -5,6 +5,7 @@ MAINTAINER mad-raz <abdelrazzak.ahmed@gmail.com>
 # Install Dependencies
 RUN apk add --no-cache \
   build-base \
+  file \
   git \
   libxml2-dev \
   libxslt-dev \
