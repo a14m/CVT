@@ -7,15 +7,8 @@
 .row
   .torrents
     - torrents.each do |torrent|
-      = link_to torrent_path(torrent) do
-        .torrent
-          .col-xs-1.torrent-status{ class: torrent.status }
-          .col-xs-8
-            = torrent.name
-          .col-xs-3.stats
-            %span.percentage
-              %span= torrent.percentage
-              %span.sign= '%'
-            %span.usage
-              %span= torrent.size_status[0...-2]
-              %span.unit= torrent.size_status[-2..-1]
+      - if torrent.status == :done
+        = link_to download_torrent_path(torrent), target: '_blank' do
+          = render partial: 'torrents/torrent', locals: { torrent: torrent }
+      - else
+        = render partial: 'torrents/torrent', locals: { torrent: torrent }
