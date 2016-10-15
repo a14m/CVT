@@ -11,6 +11,7 @@ gem 'paperclip'                       # Easy file attachment management
 gem 'tzinfo-data'                     # Timezone Data
 gem 'transmission-rpc', github: 'mad-raz/transmission-rpc' # Transmission torrent client
 gem 'memoist'                         # ActiveSupport::Memoizable
+gem 'rubyzip', require: 'zip'         # Zip files ruby library
 
 # front-end dependencies
 gem 'rails-assets-tether'             # Bootstrap tooltip dependency
