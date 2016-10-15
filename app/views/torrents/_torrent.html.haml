@@ -1,0 +1,11 @@
+.torrent
+  .col-xs-1.torrent-status{ class: torrent.status }
+  .col-xs-8
+    = torrent.name
+  .col-xs-3.stats
+    %span.percentage
+      %span= torrent.percentage
+      %span.sign= '%'
+    %span.usage
+      %span= torrent.size_status[0...-2]
+      %span.unit= torrent.size_status[-2..-1]
