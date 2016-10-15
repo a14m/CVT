@@ -23,6 +23,7 @@ class TorrentDecorator < ApplicationDecorator
     downloaded_unit = downloaded[-2..-1]
     total_size_unit = total_size[-2..-1]
 
+    return total_size if status == :done
     return "#{downloaded} / #{total_size}" if downloaded_unit != total_size_unit
     "#{downloaded[0...-2]}/ #{total_size}" if downloaded_unit == total_size_unit
   end
