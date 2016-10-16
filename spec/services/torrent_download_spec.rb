@@ -38,7 +38,7 @@ RSpec.describe TorrentDownload, type: :service do
     end
 
     it 'creates zip_file of the torrents' do
-      file = File.new(zip_file_path)
+      file = double('file')
       zip = double('zip')
 
       allow(transmission).to receive(:download_directory).and_return '/download'
@@ -54,8 +54,10 @@ RSpec.describe TorrentDownload, type: :service do
       expect(zip).to receive(:add).with('f1', '/download/f1')
       expect(zip).to receive(:add).with('f2', '/download/f2')
 
-      expect(subject.send(:torrent_zip_file_path, transmission)).to \
-        eq zip_file_path
+      # once on Zip::File.open
+      # once on zip_file.path method return
+      expect(file).to receive(:path).twice.and_return zip_file_path
+      subject.send(:torrent_zip_file_path, transmission)
     end
   end
 end
