@@ -4,9 +4,7 @@ RSpec.describe TorrentDecorator, type: :decorator do
   subject { torrent.decorate }
   let(:transmission) { double('transmission') }
   let(:torrent) { Fabricate.build(:torrent) }
-  before do
-    allow(torrent).to receive(:transmission).and_return transmission
-  end
+  before { allow(torrent).to receive(:transmission).and_return transmission }
 
   describe '#transmission' do
     it 'return the memoized transmission object' do
