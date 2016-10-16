@@ -13,12 +13,14 @@
 #  reset_password_token            :string           indexed
 #  reset_password_token_expires_at :datetime
 #  reset_password_email_sent_at    :datetime
+#  stripe_id                       :string           indexed
 #
 # Indexes
 #
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_remember_me_token     (remember_me_token)
 #  index_users_on_reset_password_token  (reset_password_token)
+#  index_users_on_stripe_id             (stripe_id)
 #
 
 class User < ApplicationRecord
