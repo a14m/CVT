@@ -29,8 +29,8 @@ class TorrentDecorator < ApplicationDecorator
   end
 
   def status
-    return :done if object.transmission.percent_done == 1
-    return :stopped if object.transmission.status == :stopped
+    return :done if transmission.percent_done == 1
+    return :stopped if transmission.status == :stopped
     :downloading
   end
 end
