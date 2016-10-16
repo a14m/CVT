@@ -17,4 +17,19 @@ RSpec.describe Torrent, type: :model do
         .allowing('application/x-bittorrent')
     end
   end
+
+  describe '#transmission' do
+    it 'Transmission::RPC::Torrent#find' do
+      expect(Transmission::RPC::Torrent).to receive(:find)
+        .with(subject.transmission_id).once.and_return Object.new
+      subject.transmission
+      subject.transmission
+      subject.transmission
+    end
+
+    it 'raises NotFoundError' do
+      expect(Transmission::RPC::Torrent).to receive(:find).and_return nil
+      expect { subject.transmission }.to raise_error NotFoundError
+    end
+  end
 end

@@ -1,0 +1,66 @@
+.row {
+  // Torrent Header row
+  .torrent-header {
+    display: flex;
+    height: 60px;
+
+    h1 {
+      font-weight: 100;
+    }
+
+    .status {
+      border-left-width: 2px;
+      border-left-style: solid;
+    }
+  }
+
+  // Torrents table
+  .torrents {
+    a {
+      text-decoration: none !important;
+    }
+
+    // Torrent row
+    .torrent {
+      display: flex;
+
+      &:hover {
+        background-color: #eff0f1;
+      }
+
+      .torrent-status {
+        border-left-width: 2px;
+        border-left-style: solid;
+
+        &.stopped {
+          border-color: $danger;
+        }
+
+        &.downloading {
+          border-color: $warning;
+        }
+
+        &.done {
+          border-color: $success;
+        }
+      }
+
+      .stats {
+        span {
+          color: black;
+          font-weight: 200;
+        }
+
+        .percentage, .usage {
+          &.percentage {
+            display: none;
+          }
+          .unit {
+            letter-spacing: -1px;
+            font-weight: 900;
+          }
+        }
+      }
+    }
+  }
+}

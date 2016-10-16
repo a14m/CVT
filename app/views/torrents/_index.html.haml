@@ -1,0 +1,14 @@
+.row
+  .torrent-header
+    .col-sm-1.status
+    .col-sm-3.text-xs-left
+      %h1.title= 'Torrents'
+
+.row
+  .torrents
+    - torrents.each do |torrent|
+      - if torrent.status == :done
+        = link_to download_torrent_path(torrent), target: '_blank' do
+          = render partial: 'torrents/torrent', locals: { torrent: torrent }
+      - else
+        = render partial: 'torrents/torrent', locals: { torrent: torrent }

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe TorrentCreation, type: :service do
   let(:file) { File.new("#{Rails.root}/spec/fixtures/files/test.torrent") }
 
-  describe '.call' do
+  describe '#call' do
     let(:transmission_torrent) { double 'transmission_torrent' }
 
     it 'create Torrent object after checking policies' do
@@ -19,7 +19,7 @@ RSpec.describe TorrentCreation, type: :service do
     end
   end
 
-  describe '.transmission_add' do
+  describe '#transmission_add' do
     it 'adds torrent to transmission daemon' do
       file.rewind
 
@@ -46,7 +46,7 @@ RSpec.describe TorrentCreation, type: :service do
     end
   end
 
-  describe '.create_torrent' do
+  describe '#create_torrent' do
     let(:user)    { Fabricate.create(:user) }
     let(:torrent) { double('torrent') }
     let(:torrent_file) { double('torrent_file') }

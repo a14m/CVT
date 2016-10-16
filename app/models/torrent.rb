@@ -21,6 +21,8 @@
 #
 
 class Torrent < ApplicationRecord
+  extend Memoist
+
   # Relations
   belongs_to :user, required: true
 
@@ -34,4 +36,12 @@ class Torrent < ApplicationRecord
   validates_attachment :torrent,
     presence: true,
     content_type: { content_type: 'application/x-bittorrent' }
+
+  # Transmission Torrent Object
+  def transmission
+    torrent = Transmission::RPC::Torrent.find(transmission_id)
+    fail NotFoundError, 'torrents.not_found' unless torrent
+    torrent
+  end
+  memoize :transmission
 end

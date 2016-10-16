@@ -1,5 +1,15 @@
 # Torrents Controller
 class TorrentsController < ApplicationController
+  decorates_assigned :torrent
+
+  # GET /torrents/:id/download
+  def download
+    file_path = TorrentDownload.new.call(
+      torrent: current_user.torrents.find(params[:id])
+    )
+    send_file(file_path)
+  end
+
   # POST /torrents
   def create
     TorrentCreation.new.call(user: current_user, file: torrent_params[:file])
@@ -14,6 +24,8 @@ class TorrentsController < ApplicationController
   rescue ApplicationError
     render status: 500, json: { message: I18n.t('torrents.service_stopped') }
   end
+
+  private
 
   def torrent_params
     params.require(:torrent).permit(:file)

@@ -15,9 +15,12 @@ Rails.application.routes.draw do
   post '/:token/password' => 'passwords#reset_password'
 
   # Dashboard
-  get '/dashboard' => 'dashboards#index'
+  resource :dashboard, only: [:show]
 
-  resource :torrents
+  # Torrent
+  resources :torrents, only: [:create] do
+    get :download, on: :member
+  end
 
   # Landing/Static Pages
   root to: 'landing#index'

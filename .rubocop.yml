@@ -16,6 +16,12 @@ Metrics/LineLength:
     - 'spec/rails_helper.rb'
     - 'spec/spec_helper.rb'
 
+Metrics/BlockLength:
+  Exclude:
+    - 'config/environments/*'
+    - 'lib/tasks/*'
+    - 'spec/**/*'
+
 Metrics/MethodLength:
   Max: 15
 
