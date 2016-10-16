@@ -11,12 +11,12 @@ RSpec.describe UserDecorator, type: :decorator do
     end
 
     it 'returns 1.0' do
-      allow(user).to receive(:usage).and_return 1_073_741_824
+      allow(user).to receive(:usage).and_return 1_073_741_824 # 1 GB
       expect(subject.usage).to eq '1.0'
     end
 
     it 'returns 2.5' do
-      allow(user).to receive(:usage).and_return 2_684_354_560
+      allow(user).to receive(:usage).and_return 2_684_354_560 # 2.5 GB
       expect(subject.usage).to eq '2.5'
     end
   end
@@ -28,12 +28,12 @@ RSpec.describe UserDecorator, type: :decorator do
     end
 
     it 'returns 5.0' do
-      allow(user).to receive(:usage).and_return 1_073_741_824
+      allow(user).to receive(:usage).and_return 1_073_741_824 # 1 GB
       expect(subject.percentage).to eq 5.0
     end
 
     it 'returns 12.5' do
-      allow(user).to receive(:usage).and_return 2_684_354_560
+      allow(user).to receive(:usage).and_return 2_684_354_560 # 2.5 GB
       expect(subject.percentage).to eq 12.5
     end
   end
