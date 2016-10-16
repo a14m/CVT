@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20161016220212) do
   create_table "torrents", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string   "name"
     t.integer  "transmission_id"
-    t.integer  "size"
+    t.bigint   "size"
     t.string   "checksum"
     t.uuid     "user_id"
     t.datetime "created_at",           null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20161016220212) do
   end
 
   create_table "users", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.string   "email",                           null: false
+    t.string   "email",                                                null: false
     t.string   "crypted_password"
     t.string   "salt"
     t.datetime "created_at"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20161016220212) do
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
     t.string   "stripe_id"
+    t.datetime "expires_at"
+    t.bigint   "quota",                           default: 5368709120
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree

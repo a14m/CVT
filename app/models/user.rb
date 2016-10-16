@@ -14,6 +14,8 @@
 #  reset_password_token_expires_at :datetime
 #  reset_password_email_sent_at    :datetime
 #  stripe_id                       :string           indexed
+#  expires_at                      :datetime
+#  quota                           :integer          default(5368709120)
 #
 # Indexes
 #
@@ -42,13 +44,5 @@ class User < ApplicationRecord
 
   def usage
     torrents.sum(:size)
-  end
-
-  def quota
-    20 * 1024 * 1024 * 1024
-  end
-
-  def expires_at
-    Date.parse('2016-12-31')
   end
 end
