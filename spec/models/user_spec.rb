@@ -21,7 +21,7 @@ RSpec.describe User, type: :model do
   end
 
   it '#quota' do
-    expect(subject.quota).to eq 20 * 1024 * 1024 * 1024
+    expect(subject.quota).to eq 5 * 1024 * 1024 * 1024
   end
 
   it '#expires_at' do
