@@ -40,6 +40,7 @@ en:
     terms_of_service: 'Terms of Service'
     privacy: 'Privacy'
     refund: 'Refund'
+    stripe_failed: 'Something went wrong, please try again later'
   passwords:
     reset_instructions_sent: 'Please check your email for password reset instructions'
     reset_success: 'Password successfully changed'
