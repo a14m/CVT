@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'rails', ' 5'
+gem 'rails', '5'
 
 gem 'pg'                              # Postgres ORM
 gem 'puma'                            # Application server
@@ -26,6 +26,7 @@ gem 'sass-rails'                      # SCSS for stylesheets
 gem 'turbolinks'                      # navigating your faster
 gem 'parsley-rails'                   # awesome form validation
 gem 'dropzonejs-rails'                # drop zone drag and drop rails gem
+gem 'font-awesome-rails'              # Font-awesome icons
 
 group :development, :test do
   # gem 'bullet'                        # kill N+1 queries and unused eager loading
