@@ -24,7 +24,7 @@ RSpec.describe UserCreation, type: :service do
       user = subject.call(email: email, password: password)
       expect(User.count).to eq 1
       expect(user.stripe_id).to match /test_cus_/
-      expect(user.expires_at).to be_within(1.second).of(3.days.from_now)
+      expect(user.expires_at).to be_within(5.seconds).of(3.days.from_now)
     end
 
     it 'raises StripeError when plan is not created' do
