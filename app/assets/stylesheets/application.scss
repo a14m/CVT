@@ -6,6 +6,7 @@
 $success: $brand-success;
 $warning: $brand-warning;
 $danger:  $brand-danger;
+$black: #373a3c;
 
 // application specific styles
 @import './authentications.scss';
@@ -24,4 +25,18 @@ h1, h2, h3 {
 
 .danger {
   color: $danger;
+}
+
+.navbar {
+  a.controls {
+    text-decoration: none !important;
+
+    .btn-outline {
+      @include button-outline-variant($black);
+    }
+
+    i.fa {
+      width: 50px;
+    }
+  }
 }
