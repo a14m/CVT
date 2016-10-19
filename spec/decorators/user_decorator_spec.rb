@@ -38,6 +38,13 @@ RSpec.describe UserDecorator, type: :decorator do
     end
   end
 
+  describe '#expires_at' do
+    it 'formats expires_at(%d %b %Y)' do
+      allow(user).to receive(:expires_at).and_return Date.parse('1970-01-01')
+      expect(subject.expires_at).to eq '01 Jan 1970'
+    end
+  end
+
   describe '#plan_size' do
     it 'returns 5 GB' do
       expect(subject.plan_size).to eq '5 GB'

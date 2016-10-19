@@ -11,6 +11,10 @@ class UserDecorator < ApplicationDecorator
     user.usage.to_f / user.quota.to_f * 100
   end
 
+  def expires_at
+    user.expires_at.strftime('%d %b %Y')
+  end
+
   def plan_size
     h.number_to_human_size(user.quota)
   end
