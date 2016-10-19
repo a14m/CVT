@@ -15,7 +15,7 @@ class AuthenticationsController < ApplicationController
   rescue ActiveRecord::RecordInvalid => e
     flash.now[:error] = e.record.errors.full_messages.to_sentence
     render 'new_sign_up'
-  rescue Stripe::StripeError => e
+  rescue Stripe::StripeError
     flash.now[:error] = I18n.t('authentications.stripe_failed')
     render 'new_sign_up'
   end
