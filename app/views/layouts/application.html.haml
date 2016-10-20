@@ -16,6 +16,8 @@
         .pull-xs-right
           - if logged_in?
             %form.form-inline
+              = link_to dashboard_path, class: 'controls' do
+                %i.fa.fa-home.btn.btn-outline
               = link_to user_path, class: 'controls' do
                 %i.fa.fa-user.btn.btn-outline
               = link_to sign_out_path, method: :delete, class: 'controls' do
