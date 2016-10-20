@@ -16,6 +16,7 @@
 #  stripe_id                       :string           indexed
 #  expires_at                      :datetime
 #  quota                           :integer          default(5368709120)
+#  subscription_id                 :string           indexed
 #
 # Indexes
 #
@@ -23,6 +24,7 @@
 #  index_users_on_remember_me_token     (remember_me_token)
 #  index_users_on_reset_password_token  (reset_password_token)
 #  index_users_on_stripe_id             (stripe_id)
+#  index_users_on_subscription_id       (subscription_id)
 #
 
 class User < ApplicationRecord
