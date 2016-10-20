@@ -11,6 +11,7 @@ $black: #373a3c;
 // application specific styles
 @import './authentications.scss';
 @import './users/_quota.scss';
+@import './users/_info.scss';
 @import './torrents/_add.scss';
 @import './torrents/_index.scss';
 @import './flashes.scss';
