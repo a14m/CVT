@@ -1,0 +1,23 @@
+.row
+  .info
+    .col-sm-1.status
+
+    -# Email Title
+    .col-sm-3.text-xs-left
+      %h4= 'Email'
+
+    -# Email info
+    .col-sm-8
+      %h4= user.email
+
+.row
+  .info
+    .col-sm-1.status
+
+    -# Email Title
+    .col-sm-3.text-xs-left
+      %h4= 'Password'
+
+    .col-sm-8
+      %h4
+        = link_to 'Change Password (WIP)', user_path
