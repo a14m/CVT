@@ -1,5 +1,7 @@
 # User Decorator
 class UserDecorator < ApplicationDecorator
+  delegate_all
+
   def usage
     h.number_with_precision(
       user.usage / (1024.0 * 1024.0 * 1024.0),
