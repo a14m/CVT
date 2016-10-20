@@ -28,4 +28,8 @@ class UserDecorator < ApplicationDecorator
     return 'orange' if percentage.between?(60, 80)
     'red'
   end
+
+  def email
+    user.email[0] + user.email[1..-2].gsub(/./, '*') + user.email[-1]
+  end
 end

@@ -88,4 +88,10 @@ RSpec.describe UserDecorator, type: :decorator do
       expect(subject.status).to eq 'red'
     end
   end
+
+  describe '#email' do
+    it 'hides parts of the e***l' do
+      expect(subject.email).to match(/[a-zA-Z](\*+)[a-zA-Z]/)
+    end
+  end
 end
