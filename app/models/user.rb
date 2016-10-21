@@ -40,8 +40,8 @@ class User < ApplicationRecord
   validates :password, presence: true, if: :password_required?
   validates :password, length: { minimum: 8 }, if: :password_required?
 
-  validates :stripe_id,  presence: true, on: :update
-  validates :expires_at, presence: true, on: :update
+  validates :stripe_id,  presence: true
+  validates :expires_at, presence: true
 
   def password_required?
     new_record? || changes[:crypted_password]
@@ -52,6 +52,6 @@ class User < ApplicationRecord
   end
 
   def valid_subscription?
-    expires_at&.> Date.today
+    expires_at > Date.today
   end
 end
