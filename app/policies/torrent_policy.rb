@@ -25,6 +25,6 @@ class TorrentPolicy
   end
 
   def valid_subscription?
-    user.expires_at? && user.expires_at > Date.today
+    user.valid_subscription?
   end
 end

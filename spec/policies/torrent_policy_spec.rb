@@ -54,23 +54,9 @@ RSpec.describe TorrentPolicy, type: :policy do
   end
 
   describe '#valid_subscription?' do
-    context 'has expires_at' do
-      it 'returns true' do
-        user.expires_at = 1.day.from_now
-        expect(subject.send(:valid_subscription?)).to be_truthy
-      end
-
-      it 'returns false' do
-        user.expires_at = 1.day.ago
-        expect(subject.send(:valid_subscription?)).to be_falsy
-      end
-    end
-
-    context 'no expires_at' do
-      it 'returns false' do
-        user.expires_at = nil
-        expect(subject.send(:valid_subscription?)).to be_falsy
-      end
+    it 'calls user#valid_subscription?' do
+      expect(user).to receive(:valid_subscription?)
+      subject.send(:valid_subscription?)
     end
   end
 end
