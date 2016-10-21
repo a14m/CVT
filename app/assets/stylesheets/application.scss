@@ -8,10 +8,15 @@ $warning: $brand-warning;
 $danger:  $brand-danger;
 $black: #373a3c;
 
+.btn-outline {
+  @include button-outline-variant($black);
+}
+
 // application specific styles
 @import './authentications.scss';
 @import './users/_quota.scss';
 @import './users/_info.scss';
+@import './users/_subscriptions.scss';
 @import './torrents/_add.scss';
 @import './torrents/_index.scss';
 @import './flashes.scss';
@@ -31,10 +36,6 @@ h1, h2, h3 {
 .navbar {
   a.controls {
     text-decoration: none !important;
-
-    .btn-outline {
-      @include button-outline-variant($black);
-    }
 
     i.fa {
       width: 50px;
