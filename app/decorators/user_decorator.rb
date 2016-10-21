@@ -31,7 +31,11 @@ class UserDecorator < ApplicationDecorator
     'red'
   end
 
-  def email
+  def email_hidden
     user.email[0] + user.email[1..-2].gsub(/./, '*') + user.email[-1]
+  end
+
+  def subscribed?
+    user.subscription_id?
   end
 end
