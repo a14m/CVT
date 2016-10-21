@@ -58,3 +58,7 @@ en:
   subscription:
     expired: 'Subscription Expired, please renew your subscription'
     enough_space: 'No space available to add this torrent'
+    subscribed: 'Subscribed successfully, plan valid until %{expires_at}'
+    already_subscribed: 'Already subscribed, you can use your account till %{expires_at}'
+    unsubscribed: "Unsubscribed successfully, plan won't auto renew"
+    already_unsubscribed: 'Already unsubscribed, you can use your account till %{expires_at}'
