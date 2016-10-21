@@ -50,4 +50,8 @@ class User < ApplicationRecord
   def usage
     torrents.sum(:size)
   end
+
+  def valid_subscription?
+    expires_at&.> Date.today
+  end
 end

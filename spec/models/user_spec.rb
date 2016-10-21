@@ -33,4 +33,25 @@ RSpec.describe User, type: :model do
   describe '#expires_at' do
     it { is_expected.to validate_presence_of(:expires_at).on(:update) }
   end
+
+  describe '#valid_subscription?' do
+    context 'expires_at = value' do
+      it 'returns true' do
+        subject.expires_at = 1.day.from_now
+        expect(subject.valid_subscription?).to be_truthy
+      end
+
+      it 'returns false' do
+        subject.expires_at = 1.day.ago
+        expect(subject.valid_subscription?).to be_falsy
+      end
+    end
+
+    context 'expires_at = nil' do
+      it 'returns false' do
+        subject.expires_at = nil
+        expect(subject.valid_subscription?).to be_falsy
+      end
+    end
+  end
 end
