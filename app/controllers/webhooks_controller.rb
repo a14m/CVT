@@ -24,7 +24,7 @@ class WebhooksController < ApplicationController
   def renew_subscription(event)
     user = User.find_by(stripe_id: event['customer'])
     fail ApplicationError, "cannot find user #{event['customer']}" unless user
-    user.expires_at = Time.at(event['lines']['data'][0]['period']['end'])
+    user.expires_at = Time.at(event['lines']['data'].last['period']['end'])
     user.save!
   end
 

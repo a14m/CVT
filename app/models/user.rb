@@ -52,6 +52,6 @@ class User < ApplicationRecord
   end
 
   def valid_subscription?
-    expires_at > Date.today
+    expires_at > Time.current
   end
 end
