@@ -9,16 +9,19 @@ Rails.application.routes.draw do
 
   # Passwords
   get '/reset_password'  => 'passwords#new_reset_password_instructions', as: 'reset_password_instructions'
-  get '/:token/password' => 'passwords#new_reset_password', as: 'reset_password'
+  get '/password/:token' => 'passwords#new_reset_password', as: 'reset_password'
 
   post '/reset_password'  => 'passwords#reset_password_instructions'
-  post '/:token/password' => 'passwords#reset_password'
+  post '/password/:token' => 'passwords#reset_password'
 
   post '/webhooks' => 'webhooks#manage'
 
   # Dashboard
   resource :dashboard, only: [:show]
+  # User
   resource :user, only: [:show] do
+    get    :password, to: 'users#new_edit_password', as: 'new_edit_password'
+    put    :password, as: 'edit_password'
     post   :subscribe
     delete :unsubscribe
   end

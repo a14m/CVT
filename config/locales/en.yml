@@ -41,6 +41,10 @@ en:
     privacy: 'Privacy'
     refund: 'Refund'
     stripe_failed: 'Something went wrong, please try again later'
+    invalid_password: 'Invalid Password'
+    password_updated: 'Password updated successfully'
+  users:
+    profile: 'Back to profile'
   passwords:
     reset_instructions_sent: 'Please check your email for password reset instructions'
     reset_success: 'Password successfully changed'
