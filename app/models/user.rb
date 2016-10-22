@@ -14,9 +14,10 @@
 #  reset_password_token_expires_at :datetime
 #  reset_password_email_sent_at    :datetime
 #  stripe_id                       :string           indexed
-#  expires_at                      :datetime
+#  expires_at                      :datetime         not null
 #  quota                           :integer          default(5368709120)
 #  subscription_id                 :string           indexed
+#  canceled_at                     :datetime
 #
 # Indexes
 #
