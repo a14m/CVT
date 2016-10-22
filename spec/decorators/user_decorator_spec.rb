@@ -27,20 +27,27 @@ RSpec.describe UserDecorator, type: :decorator do
       expect(subject.percentage).to eq 0.0
     end
 
-    it 'returns 5.0' do
+    it 'returns 20.0' do
       allow(user).to receive(:usage).and_return 1_073_741_824 # 1 GB
-      expect(subject.percentage).to eq 5.0
+      expect(subject.percentage).to eq 20.0
     end
 
-    it 'returns 12.5' do
+    it 'returns 50.0' do
       allow(user).to receive(:usage).and_return 2_684_354_560 # 2.5 GB
-      expect(subject.percentage).to eq 12.5
+      expect(subject.percentage).to eq 50.0
+    end
+  end
+
+  describe '#expires_at' do
+    it 'formats expires_at(%d %b %Y)' do
+      allow(user).to receive(:expires_at).and_return Date.parse('1970-01-01')
+      expect(subject.expires_at).to eq '01 Jan 1970'
     end
   end
 
   describe '#plan_size' do
-    it 'returns 20 GB' do
-      expect(subject.plan_size).to eq '20 GB'
+    it 'returns 5 GB' do
+      expect(subject.plan_size).to eq '5 GB'
     end
   end
 
@@ -79,6 +86,12 @@ RSpec.describe UserDecorator, type: :decorator do
 
       allow(subject).to receive(:percentage).and_return 101
       expect(subject.status).to eq 'red'
+    end
+  end
+
+  describe '#email_hidden' do
+    it 'hides parts of the e***l' do
+      expect(subject.email_hidden).to match(/[a-zA-Z](\*+)[a-zA-Z]/)
     end
   end
 end

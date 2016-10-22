@@ -20,11 +20,29 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_length_of(:password).is_at_least(8) }
   end
 
-  it '#quota' do
-    expect(subject.quota).to eq 20 * 1024 * 1024 * 1024
+  describe '#quota' do
+    it 'returns defualt quota' do
+      expect(subject.quota).to eq 5 * 1024 * 1024 * 1024
+    end
   end
 
-  it '#expires_at' do
-    expect(subject.expires_at).to eq Date.parse('2016-12-31')
+  describe '#stripe_id' do
+    it { is_expected.to validate_presence_of(:stripe_id).on(:update) }
+  end
+
+  describe '#expires_at' do
+    it { is_expected.to validate_presence_of(:expires_at) }
+  end
+
+  describe '#valid_subscription?' do
+    it 'returns true' do
+      subject.expires_at = 1.day.from_now
+      expect(subject.valid_subscription?).to be_truthy
+    end
+
+    it 'returns false' do
+      subject.expires_at = 1.day.ago
+      expect(subject.valid_subscription?).to be_falsy
+    end
   end
 end

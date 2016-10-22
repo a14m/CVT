@@ -8,19 +8,19 @@ RSpec.describe TorrentPolicy, type: :policy do
 
   describe '#add?' do
     it 'returns true' do
-      allow(subject).to receive(:expired_subscription?).and_return false
+      allow(subject).to receive(:valid_subscription?).and_return true
       allow(subject).to receive(:enough_space?).and_return true
       expect(subject.add?).to be_truthy
     end
 
     it 'fails TorrentCreationError(subscription.expired)' do
-      allow(subject).to receive(:expired_subscription?).and_return true
+      allow(subject).to receive(:valid_subscription?).and_return false
       expect { subject.add? }.to raise_error TorrentCreationError,
         'subscription.expired'
     end
 
     it 'fails TorrentCreationError(subscription.enough_space)' do
-      allow(subject).to receive(:expired_subscription?).and_return false
+      allow(subject).to receive(:valid_subscription?).and_return true
       allow(subject).to receive(:enough_space?).and_return false
       expect { subject.add? }.to raise_error TorrentCreationError,
         'subscription.enough_space'
@@ -53,15 +53,10 @@ RSpec.describe TorrentPolicy, type: :policy do
     end
   end
 
-  describe '#expired_subscription?' do
-    it 'returns true' do
-      Timecop.freeze(Date.parse('2017-01-01')) do
-        expect(subject.send(:expired_subscription?)).to be_truthy
-      end
-    end
-
-    it 'returns false' do
-      expect(subject.send(:expired_subscription?)).to be_falsy
+  describe '#valid_subscription?' do
+    it 'calls user#valid_subscription?' do
+      expect(user).to receive(:valid_subscription?)
+      subject.send(:valid_subscription?)
     end
   end
 end

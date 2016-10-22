@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'rails', ' 5'
+gem 'rails', '5'
 
 gem 'pg'                              # Postgres ORM
 gem 'puma'                            # Application server
@@ -12,6 +12,7 @@ gem 'tzinfo-data'                     # Timezone Data
 gem 'transmission-rpc', github: 'mad-raz/transmission-rpc' # Transmission torrent client
 gem 'memoist'                         # ActiveSupport::Memoizable
 gem 'rubyzip', require: 'zip'         # Zip files ruby library
+gem 'stripe'                          # Stripe payments solution
 
 # front-end dependencies
 gem 'rails-assets-tether'             # Bootstrap tooltip dependency
@@ -25,6 +26,7 @@ gem 'sass-rails'                      # SCSS for stylesheets
 gem 'turbolinks'                      # navigating your faster
 gem 'parsley-rails'                   # awesome form validation
 gem 'dropzonejs-rails'                # drop zone drag and drop rails gem
+gem 'font-awesome-rails'              # Font-awesome icons
 
 group :development, :test do
   # gem 'bullet'                        # kill N+1 queries and unused eager loading
@@ -52,6 +54,7 @@ group :test do
   gem 'fabrication'                   # Fabricate testing objects
   gem 'shoulda-matchers'              # Validation testing made simple
   gem 'timecop'                       # time travel capabilities for testing
+  gem 'stripe-ruby-mock'              # Mock stripe
   # gem 'codeclimate-test-reporter', require: nil # CodeClimate coverage
   # gem 'database_cleaner'              # db cleaner for test env.
 end

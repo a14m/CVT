@@ -1,0 +1,15 @@
+.row {
+  .info {
+    display: flex;
+
+    h4, span {
+      font-weight: 100;
+    }
+
+    // Status Bar
+    .status {
+      border-left-width: 2px;
+      border-left-style: solid;
+    }
+  }
+}

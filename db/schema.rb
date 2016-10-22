@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160814153000) do
+ActiveRecord::Schema.define(version: 20161020150127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160814153000) do
   create_table "torrents", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string   "name"
     t.integer  "transmission_id"
-    t.integer  "size"
+    t.bigint   "size"
     t.string   "checksum"
     t.uuid     "user_id"
     t.datetime "created_at",           null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20160814153000) do
   end
 
   create_table "users", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.string   "email",                           null: false
+    t.string   "email",                                                null: false
     t.string   "crypted_password"
     t.string   "salt"
     t.datetime "created_at"
@@ -42,9 +42,15 @@ ActiveRecord::Schema.define(version: 20160814153000) do
     t.string   "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
+    t.string   "stripe_id"
+    t.datetime "expires_at",                                           null: false
+    t.bigint   "quota",                           default: 5368709120
+    t.string   "subscription_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
+    t.index ["stripe_id"], name: "index_users_on_stripe_id", using: :btree
+    t.index ["subscription_id"], name: "index_users_on_subscription_id", using: :btree
   end
 
 end

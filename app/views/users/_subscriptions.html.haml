@@ -1,0 +1,21 @@
+.row
+  .subscription
+    .col-sm-1.status
+
+    -# Manage Subscription Title
+    .col-sm-3.text-xs-left
+      %h4= 'Subscriptions'
+    .col-sm-8
+      - if UserPolicy.new(@user).can_unsubscribe?
+        = link_to 'Cancel Subscription', unsubscribe_user_path, method: :delete,
+          class: "btn btn-danger-outline",
+          data: { confirm: 'Are you sure?' }
+      - else
+        = form_tag subscribe_user_path, method: :post do
+          %script.stripe-button{ 'data-amount' => '500',
+            'data-description' => 'Monthly subscription',
+            'data-email' => user.email,
+            'data-key' => Rails.configuration.stripe[:publishable_key],
+            'data-locale' => 'auto',
+            'data-currency' => 'eur',
+            src: 'https://checkout.stripe.com/checkout.js'}

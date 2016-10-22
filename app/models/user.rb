@@ -13,12 +13,18 @@
 #  reset_password_token            :string           indexed
 #  reset_password_token_expires_at :datetime
 #  reset_password_email_sent_at    :datetime
+#  stripe_id                       :string           indexed
+#  expires_at                      :datetime         not null
+#  quota                           :integer          default(5368709120)
+#  subscription_id                 :string           indexed
 #
 # Indexes
 #
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_remember_me_token     (remember_me_token)
 #  index_users_on_reset_password_token  (reset_password_token)
+#  index_users_on_stripe_id             (stripe_id)
+#  index_users_on_subscription_id       (subscription_id)
 #
 
 class User < ApplicationRecord
@@ -34,6 +40,9 @@ class User < ApplicationRecord
   validates :password, presence: true, if: :password_required?
   validates :password, length: { minimum: 8 }, if: :password_required?
 
+  validates :stripe_id,  presence: true, on: :update
+  validates :expires_at, presence: true
+
   def password_required?
     new_record? || changes[:crypted_password]
   end
@@ -42,11 +51,7 @@ class User < ApplicationRecord
     torrents.sum(:size)
   end
 
-  def quota
-    20 * 1024 * 1024 * 1024
-  end
-
-  def expires_at
-    Date.parse('2016-12-31')
+  def valid_subscription?
+    expires_at > Date.today
   end
 end

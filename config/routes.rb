@@ -16,6 +16,10 @@ Rails.application.routes.draw do
 
   # Dashboard
   resource :dashboard, only: [:show]
+  resource :user do
+    post   :subscribe
+    delete :unsubscribe
+  end
 
   # Torrent
   resources :torrents, only: [:create] do

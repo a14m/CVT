@@ -3,8 +3,7 @@ class TorrentCreation
   def call(user:, file:)
     transmission_torrent = transmission_add!(file)
     policy = TorrentPolicy.new(user, transmission_torrent)
-    policy.add?
-    torrent = create_torrent!(user, transmission_torrent, file)
+    torrent = create_torrent!(user, transmission_torrent, file) if policy.add?
     transmission_torrent.start! if policy.start?
     torrent
   end

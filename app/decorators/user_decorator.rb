@@ -1,5 +1,7 @@
 # User Decorator
 class UserDecorator < ApplicationDecorator
+  delegate_all
+
   def usage
     h.number_with_precision(
       user.usage / (1024.0 * 1024.0 * 1024.0),
@@ -9,6 +11,10 @@ class UserDecorator < ApplicationDecorator
 
   def percentage
     user.usage.to_f / user.quota.to_f * 100
+  end
+
+  def expires_at
+    user.expires_at.strftime('%d %b %Y')
   end
 
   def plan_size
@@ -23,5 +29,9 @@ class UserDecorator < ApplicationDecorator
     return 'green'  if percentage < 60
     return 'orange' if percentage.between?(60, 80)
     'red'
+  end
+
+  def email_hidden
+    user.email[0] + user.email[1..-2].gsub(/./, '*') + user.email[-1]
   end
 end

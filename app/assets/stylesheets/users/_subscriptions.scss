@@ -1,0 +1,38 @@
+.row {
+  .subscription {
+    display: flex;
+
+    h4 {
+      font-weight: 100;
+      margin-top: 0.2rem;
+    }
+
+    // Status Bar
+    .status {
+      border-left-width: 2px;
+      border-left-style: solid;
+    }
+
+    .btn-danger-outline {
+      font-weight: 300;
+    }
+
+    button.stripe-button-el {
+      background-color: #fff;
+      background-image: none;
+      border-radius: 0;
+      border: 0;
+      box-shadow: 0 0 0 0;
+      span {
+        @include button-outline-variant($black);
+        border: 1px solid $black;
+        height: inherit;
+        font-size: inherit;
+        min-width: 150px;
+        text-shadow: 0 0 0 #fff;
+        font-weight: 300;
+        box-shadow: 0 0 0 0;
+      }
+    }
+  }
+}

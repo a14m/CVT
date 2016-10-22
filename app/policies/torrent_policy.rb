@@ -8,7 +8,7 @@ class TorrentPolicy
   end
 
   def add?
-    fail TorrentCreationError, 'subscription.expired' if expired_subscription?
+    fail TorrentCreationError, 'subscription.expired' unless valid_subscription?
     fail TorrentCreationError, 'subscription.enough_space' unless enough_space?
     true
   end
@@ -24,7 +24,7 @@ class TorrentPolicy
     total_size < user.quota
   end
 
-  def expired_subscription?
-    user.expires_at < Date.today
+  def valid_subscription?
+    user.valid_subscription?
   end
 end

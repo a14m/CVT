@@ -2,7 +2,7 @@
   .quota {
     display: flex;
 
-    h1 {
+    h1, span {
       font-weight: 100;
     }
 
@@ -49,6 +49,12 @@
       }
 
       .unit {
+        font-weight: 900;
+      }
+    }
+
+    .expires-at {
+      .month {
         font-weight: 900;
       }
     }
