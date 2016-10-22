@@ -27,7 +27,7 @@ RSpec.describe User, type: :model do
   end
 
   describe '#stripe_id' do
-    it { is_expected.to validate_presence_of(:stripe_id) }
+    it { is_expected.to validate_presence_of(:stripe_id).on(:update) }
   end
 
   describe '#expires_at' do

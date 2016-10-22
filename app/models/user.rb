@@ -40,7 +40,7 @@ class User < ApplicationRecord
   validates :password, presence: true, if: :password_required?
   validates :password, length: { minimum: 8 }, if: :password_required?
 
-  validates :stripe_id,  presence: true
+  validates :stripe_id,  presence: true, on: :update
   validates :expires_at, presence: true
 
   def password_required?
