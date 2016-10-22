@@ -17,7 +17,6 @@
 #  expires_at                      :datetime         not null
 #  quota                           :integer          default(5368709120)
 #  subscription_id                 :string           indexed
-#  canceled_at                     :datetime
 #
 # Indexes
 #
