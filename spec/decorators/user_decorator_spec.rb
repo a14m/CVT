@@ -94,16 +94,4 @@ RSpec.describe UserDecorator, type: :decorator do
       expect(subject.email_hidden).to match(/[a-zA-Z](\*+)[a-zA-Z]/)
     end
   end
-
-  describe '#subscribed?' do
-    it 'returns false' do
-      user.subscription_id = nil
-      expect(subject.subscribed?).to be_falsy
-    end
-
-    it 'returns true' do
-      user.subscription_id = :id
-      expect(subject.subscribed?).to be_truthy
-    end
-  end
 end
