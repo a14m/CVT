@@ -14,9 +14,11 @@ Rails.application.routes.draw do
   post '/reset_password'  => 'passwords#reset_password_instructions'
   post '/:token/password' => 'passwords#reset_password'
 
+  post '/webhooks' => 'webhooks#manage'
+
   # Dashboard
   resource :dashboard, only: [:show]
-  resource :user do
+  resource :user, only: [:show] do
     post   :subscribe
     delete :unsubscribe
   end
