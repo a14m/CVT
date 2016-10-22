@@ -5,6 +5,18 @@ class UsersController < ApplicationController
     @user = current_user.decorate
   end
 
+  # PUT /user/password
+  def password
+    authenticated = current_user.valid_password?(password_params[:password])
+    if authenticated
+      current_user.change_password!(password_params[:new_password])
+      flash[:success] = I18n.t('authentications.password_updated')
+    else
+      flash[:error] = I18n.t('authentications.invalid_password')
+    end
+    redirect_to user_path
+  end
+
   # POST /user/subscribe
   def subscribe
     fail SubscriptionError unless UserPolicy.new(current_user).can_subscribe?
@@ -35,5 +47,11 @@ class UsersController < ApplicationController
     flash[:error] = e.message
   ensure
     redirect_to :user
+  end
+
+  private
+
+  def password_params
+    params.require(:user).permit(:password, :new_password)
   end
 end
