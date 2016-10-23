@@ -13,17 +13,19 @@
   %body
     .container
       %nav.navbar
+        = link_to :root, class: 'navbar-brand' do
+          %i.fa.fa-empire.btn.btn-outline
         .pull-xs-right
           - if logged_in?
             %form.form-inline
-              = link_to dashboard_path, class: 'controls' do
+              = link_to :dashboard, class: 'controls' do
                 %i.fa.fa-home.btn.btn-outline
-              = link_to user_path, class: 'controls' do
+              = link_to :user, class: 'controls' do
                 %i.fa.fa-user.btn.btn-outline
-              = link_to sign_out_path, method: :delete, class: 'controls' do
+              = link_to :sign_out, method: :delete, class: 'controls' do
                 %i.fa.fa-lock.btn.btn-danger-outline
           - else
-            = link_to sign_in_path, class: 'controls' do
+            = link_to :sign_in, class: 'controls' do
               %i.fa.fa-unlock-alt.btn.btn-success-outline
 
       = render partial: 'layouts/flashes', locals: { flash: flash }

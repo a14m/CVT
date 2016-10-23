@@ -1,0 +1,19 @@
+.row {
+  .header {
+    display: flex;
+
+    h2 {
+      font-weight: 100;
+      letter-spacing: 1px;
+    }
+    h4, h5 {
+      font-weight: 100;
+    }
+
+    // Status Bar
+    .status {
+      border-left-width: 2px;
+      border-left-style: solid;
+    }
+  }
+}
