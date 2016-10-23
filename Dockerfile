@@ -26,3 +26,4 @@ RUN apk del build-base git
 
 # Copy Project files
 COPY . /app/
+CMD bundle exec puma -C config/puma.rb

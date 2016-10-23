@@ -12,7 +12,7 @@ services:
       - "51413/tcp:51413/tcp"
       - "51413/udp:51413/udp"
 
-  app:
+  web:
     build: .
     command: bin/rails server --port 3000 --binding 0.0.0.0
     environment:
