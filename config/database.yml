@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: torminator_development
+  database: cvt_development
   username: postgres
   password:
   host: <%= ENV['DB_PORT_5432_TCP_ADDR'] %>
@@ -62,7 +62,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: torminator_test
+  database: cvt_test
   username: postgres
   password:
   host: <%= ENV['DB_PORT_5432_TCP_ADDR'] %>
