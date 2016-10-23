@@ -16,6 +16,6 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authenticated
-    redirect_to sign_in_path, notice: I18n.t('authentications.login_required')
+    redirect_to :sign_in, notice: I18n.t('authentications.login_required')
   end
 end

@@ -9,7 +9,7 @@ class PasswordsController < ApplicationController
     @user = User.find_by(email: params[:password_reset][:email])
     @user&.deliver_reset_password_instructions!
     flash[:success] = I18n.t('passwords.reset_instructions_sent')
-    redirect_to root_path
+    redirect_to :root
   end
 
   # GET /:token/reset_password
@@ -27,6 +27,6 @@ class PasswordsController < ApplicationController
   rescue ActiveRecord::RecordInvalid, NotFoundError
     flash[:error] = I18n.t('passwords.reset_failed')
   ensure
-    redirect_to root_path
+    redirect_to :root
   end
 end
