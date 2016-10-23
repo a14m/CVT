@@ -1,8 +1,10 @@
-# Torminator
+# CVT
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](/LICENSE.md)
 [![wercker status](https://app.wercker.com/status/a8ba15bb8de5b3addaa638e34ac644a6/s/master "wercker status")](https://app.wercker.com/project/bykey/a8ba15bb8de5b3addaa638e34ac644a6)
 
-Torrent remote downloader.
+[CVT: Continuously variable transmission](https://en.wikipedia.org/wiki/Continuously_variable_transmission)
+
+Torrent remote downloader (using [transmission](https://transmissionbt.com/) daemon)
 
 ## Development
 ### Requirements
