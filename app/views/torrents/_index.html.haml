@@ -7,8 +7,4 @@
 .row
   .torrents
     - torrents.each do |torrent|
-      - if torrent.status == :done
-        = link_to download_torrent_path(torrent), target: '_blank' do
-          = render partial: 'torrents/torrent', locals: { torrent: torrent }
-      - else
-        = render partial: 'torrents/torrent', locals: { torrent: torrent }
+      = render partial: 'torrents/torrent', locals: { torrent: torrent }
