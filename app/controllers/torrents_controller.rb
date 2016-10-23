@@ -25,6 +25,14 @@ class TorrentsController < ApplicationController
     render status: 500, json: { message: I18n.t('torrents.service_stopped') }
   end
 
+  # DELETE /torrents/:id
+  def destroy
+    torrent = current_user.torrents.find(params[:id])
+    torrent.destroy!
+    flash[:success] = I18n.t('torrents.deleted')
+    redirect_to :dashboard
+  end
+
   private
 
   def torrent_params

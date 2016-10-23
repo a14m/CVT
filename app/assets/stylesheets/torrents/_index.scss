@@ -20,6 +20,14 @@
       text-decoration: none !important;
     }
 
+    i.fa {
+      font-size: 20px;
+      &.fa-trash-o {
+        width: 120%;
+        text-align: center;
+      }
+    }
+
     // Torrent row
     .torrent {
       display: flex;
@@ -31,6 +39,11 @@
       .torrent-status {
         border-left-width: 2px;
         border-left-style: solid;
+        color: $black;
+
+        &:hover {
+          color: $danger;
+        }
 
         &.stopped {
           border-color: $danger;

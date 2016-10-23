@@ -1,7 +1,18 @@
 .torrent
-  .col-xs-1.torrent-status{ class: torrent.status }
-  .col-xs-8
-    = torrent.name
+  = link_to torrent_path(torrent), method: :delete,
+    class: "col-xs-1 torrent-status #{torrent.status}",
+    data: { confirm: 'Are you sure?' } do
+    %i.fa.fa-trash-o
+  - if torrent.status == :done
+    = link_to download_torrent_path(torrent), target: '_blank', class: 'col-xs-8' do
+      %i.fa.fa-download
+      &nbsp;
+      = torrent.name
+  - else
+    .col-xs-8
+      %i.fa.fa-download
+      &nbsp;
+      = torrent.name
   .col-xs-3.stats
     %span.percentage
       %span= torrent.percentage

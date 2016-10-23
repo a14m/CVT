@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     else
       flash[:error] = I18n.t('authentications.invalid_password')
     end
-    redirect_to user_path
+    redirect_to :user
   end
 
   # POST /user/subscribe

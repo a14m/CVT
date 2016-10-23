@@ -39,7 +39,7 @@ class AuthenticationsController < ApplicationController
   # DELETE /sign_out
   def destroy
     logout
-    redirect_to root_path
+    redirect_to :root
   end
 
   private
