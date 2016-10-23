@@ -31,7 +31,11 @@ Rails.application.routes.draw do
     get :download, on: :member
   end
 
+
   # Landing/Static Pages
+  get '/terms_of_service' => 'landing#tos', as: 'tos'
+  get '/privacy_policy' => 'landing#privacy', as: 'privacy'
+  get '/refund_policy' => 'landing#refund', as: 'refund'
   root to: 'landing#index'
 
   # Serve websocket cable requests in-process
