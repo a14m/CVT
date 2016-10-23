@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   end
 
   # Torrent
-  resources :torrents, only: [:create] do
+  resources :torrents, only: [:create, :destroy] do
     get :download, on: :member
   end
 
