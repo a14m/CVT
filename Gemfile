@@ -55,6 +55,7 @@ group :test do
   gem 'shoulda-matchers'              # Validation testing made simple
   gem 'timecop'                       # time travel capabilities for testing
   gem 'stripe-ruby-mock'              # Mock stripe
+  gem 'mutant-rspec'                  # Mutation testing rspec integration
   # gem 'codeclimate-test-reporter', require: nil # CodeClimate coverage
   # gem 'database_cleaner'              # db cleaner for test env.
 end
