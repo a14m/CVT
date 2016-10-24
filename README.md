@@ -56,6 +56,12 @@ $ bundle exec rspec
 $ docker-compose run app rspec
 ```
 
+## Mutant Testing
+```sh
+$ RAILS_ENV=test bundle exec mutant -r ./config/environment --use rspec ClassName
+```
+replace `ClassName` with the name of the class to run mutant testing against
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
