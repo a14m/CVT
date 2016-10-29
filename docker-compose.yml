@@ -1,7 +1,7 @@
 version: '2'
 services:
   db:
-    image: postgres:9.5.3
+    image: postgres
     expose:
       - "5432"
 
@@ -12,7 +12,7 @@ services:
       - "51413/tcp:51413/tcp"
       - "51413/udp:51413/udp"
 
-  web:
+  app:
     build: .
     command: bin/rails server --port 3000 --binding 0.0.0.0
     environment:
